@@ -1,0 +1,6 @@
+<h2>Review a review for <%= @facility.name %></h2>
+<%= simple_form_for [@facility, @review] do |f| %>
+  <%= f.input :comment, label: false, placeholder: "comment here..." %>
+  <%= f.input :rating, collection: 0..5, label: false %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
