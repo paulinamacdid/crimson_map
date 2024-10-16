@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   # get "my_profile", to: "pages#my_profile"
-  resources :facility, only: [ :index, :show ] do
-    resources :review, only:  :create
-    resources :favourite, only: :create
+  resources :facilities, only: [ :index, :show ] do
+    resources :reviews, only:  :create
+    resources :favourites, only: :create
     resources :routes, only: [ :show, :create ]
   end
-  resources :favourite, only: [ :index, :update ]
+  resources :favourites, only: [ :index, :update ]
 end
