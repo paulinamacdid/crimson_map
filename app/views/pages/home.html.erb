@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<div>
+  <ul>
+  <% @facilities.each do |facility| %>
+    <li><%= facility.name %></li>
+    <li><%= facility.rating %></li>
+    <li><%= facility.location %></li>
+     <% %>
+    <%= link_to "Details", facility_path(sheep), class: "btn btn-leaf" %>
+  <% end %>
+  </ul>
+</div>

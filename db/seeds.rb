@@ -19,9 +19,41 @@ ivy = User.create(email: "ivy@gmail.com", password: "123456", first_name: "Ivy",
 melissa = User.create(email: "mel123@gmail.com", password: "123456", first_name: "Melissa", last_name: "Walter", age: 42)
 
 puts "creating facilities..."
-oru = Facility.create(address: "7 Throwley Way, Sutton SM1 4AF", business_owner: false, rating: 3.5, toilet: 3, sanitary_products: true, baby_change: true, quiet_place: true, education: false, name: "Oru")
-sutton_library = Facility.create(address: "St Nicholas Way, Sutton SM1 1EA", business_owner: false, rating: 4, toilet: 7, sanitary_products: false, baby_change: true, quiet_place: true, education: true, name: "Sutton Library")
-dobbies = Facility.create(address: "4a Woodmansterne Ln, Wallington SM6 0SU", business_owner: true, rating: 4, toilet: 1, sanitary_products: false, baby_change: true, quiet_place: false, education: false, name: "Carshalton Station")
-carshalton_station = Facility.create(address: "Carshalton SM5 2HW", business_owner: false, rating: 2, toilet: 5, sanitary_products: false, baby_change: false, quiet_place: false, education: false, name: "Carshalton Station")
-british_library = Facility.create(address: "96 Euston Rd., London NW1 2DB", business_owner: true, rating: 4.5, toilet: 3, sanitary_products: false, baby_change: true, quiet_place: true, education: true, name: "British Library")
+oru = Facility.create!(address: "7 Throwley Way, Sutton SM1 4AF",
+                      business_owner: false,
+                      rating: 3.5,
+                      toilet: 3,
+                      sanitary_products: true,
+                      baby_change: true,
+                      quiet_place: true,
+                      education: false,
+                      name: "Oru",
+                      opening_hours: "Open 08:30 - 16:00")
+sutton_library = Facility.create!(address: "St Nicholas Way, Sutton SM1 1EA",
+                                  business_owner: false,
+                                  rating: 4,
+                                  toilet: 7,
+                                  sanitary_products: true,
+                                  baby_change: true,
+                                  quiet_place: true,
+                                  education: true,
+                                  name: "Sutton Library",
+                                  opening_hours: "Open 09:00 - 17:00")
+dobbies = Facility.create!(address: "4a Woodmansterne Ln, Wallington SM6 0SU",
+                          business_owner: true,
+                          rating: 4,
+                          toilet: 1,
+                          sanitary_products: false,
+                          baby_change: true,
+                          quiet_place: false,
+                          education: false,
+                          name: "Dobbies",
+                          opening_hours: "Open 08:00 - 16:30" )
+carshalton_station = Facility.create!(address: "Carshalton SM5 2HW",
+  business_owner: false,
+  rating: 2,
+  toilet: 5,
+  sanitary_products: false,
+  baby_change: false, quiet_place: false, education: false, name: "Carshalton Station", opening_hours: "Open 06:00 - 00:00")
+british_library = Facility.create!(address: "96 Euston Rd., London NW1 2DB", business_owner: true, rating: 4.5, toilet: 3, sanitary_products: false, baby_change: true, quiet_place: true, education: true, name: "British Library", opening_hours: "Open 09:30 - 20:00")
 puts "done, created #{Facility.count} facilities"
