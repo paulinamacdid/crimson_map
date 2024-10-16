@@ -10,7 +10,11 @@
     <li><%= facility.name %></li>
     <li><%= facility.rating %></li>
     <li><%= facility.location %></li>
-     <% %>
+     <% if facility.toilet.attatched? %>
+     <% if facility.sanitary_products.attatched? %>
+     <% if facility.baby_change.attatched? %>
+     <% if facility.quiet_place.attatched? %>
+     <% if facility.education.attatched? %>
     <%= link_to "Details", facility_path(sheep), class: "btn btn-leaf" %>
   <% end %>
   </ul>
