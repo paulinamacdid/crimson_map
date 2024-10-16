@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   def new
+    #@review = Review.new
   end
 
   def create
@@ -15,4 +16,11 @@ class ReviewsController < ApplicationController
       render "facilities/show", facility: @facility, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:comment, :rating)
+  end
+
 end

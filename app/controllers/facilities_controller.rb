@@ -12,5 +12,6 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @review = Review.new
   end
 end
