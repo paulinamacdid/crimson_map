@@ -5,7 +5,8 @@ class FacilitiesController < ApplicationController
       {
         lat: facility.latitude,
         lng: facility.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {facility: facility})
+        info_window_html: render_to_string(partial: "info_window", locals: {facility: facility}),
+        marker_html: render_to_string(partial: "marker", locals: {facility: facility})
       }
     end
   end
