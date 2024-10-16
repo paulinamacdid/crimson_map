@@ -9,6 +9,7 @@
 #   end
 puts "cleaning the database first..."
 User.destroy_all
+Facility.destroy_all
 
 puts "creating users..."
 
