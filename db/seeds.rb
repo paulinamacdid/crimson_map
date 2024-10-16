@@ -16,3 +16,10 @@ gabriela = User.create(email: "gabbyb@gmail.com", password: "123456", first_name
 pamela = User.create(email: "pamela@gmail.com", password: "123456", first_name: "Pamela", last_name: "Gordon", age: 34)
 ivy = User.create(email: "ivy@gmail.com", password: "123456", first_name: "Ivy", last_name: "Johnson", age: 29)
 melissa = User.create(email: "mel123@gmail.com", password: "123456", first_name: "Melissa", last_name: "Walter", age: 42)
+
+puts "creating facilities..."
+Oru = Facility.create(address: "7 Throwley Way, Sutton SM1 4AF", business_owner: false, rating: "3.5", toilet: true, sanitary_products: true, baby_change: true, quiet_place: true, education: false, name: "Oru")
+Sutton_Library = Facility.create(address: "St Nicholas Way, Sutton SM1 1EA", business_owner: false, rating: "4", toilet: true, sanitary_products: false, baby_change: true, quiet_place: true, education: true, name: "Sutton Library")
+Dobbies = Facility.create(address: "4a Woodmansterne Ln, Wallington SM6 0SU", business_owner: true, rating: "4", toilet: true, sanitary_products: false, baby_change: true, quiet_place: false, education: false, name: "Carshalton Station")
+Carshalton_Station = Facility.create(address: "Carshalton SM5 2HW", business_owner: false, rating: "2", toilet: true, sanitary_products: false, baby_change: false, quiet_place: false, education: false, name: "Carshalton Station")
+British_Library = Facility.create(address: "96 Euston Rd., London NW1 2DB", business_owner: true, rating: "4.5", toilet: true, sanitary_products: false, baby_change: true, quiet_place: true, education: true, name: "British Library")
