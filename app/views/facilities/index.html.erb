@@ -4,9 +4,16 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
+
 <div>
   <ul>
   <% @facilities.each do |facility| %>
+    <div data-controller="favourites">
+      <%= link_to facility_favourites_path(facility), data: { turbo_method: :post} do %>
+      <i data-favourites-target="clearHeart", data-action="click->favourites#favourite", class="fa-regular fa-heart"></i>
+      <% end %>
+      <i data-favourites-target="solidHeart", data-action="click->favourites#unfavourite", class="d-none fa-solid fa-heart"></i>
+    </div>
     <li><%= facility.name %></li>
     <li><%= facility.rating %></li>
     <li><%= facility.address %></li>
