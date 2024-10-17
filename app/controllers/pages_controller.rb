@@ -12,9 +12,9 @@ class PagesController < ApplicationController
       }
     end
     Facility.near('London, NE, UK')
-    
+
     # add line of code that only pulls facilities that are a rating 4 and above
-    @facilities = Facility.near(current_user.geocode, 5)
+    # @facilities = Facility.near(current_user.geocode, 5)
     @markers = @facilities.geocoded.map do |facility|
       {
         lat: facility.latitude,
