@@ -24,6 +24,14 @@ export default class extends Controller {
         mapboxgl: mapboxgl,
       })
     );
+    const geoLocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+      showUserHeading: true,
+    });
+    this.map.addControl(geoLocate);
   }
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
