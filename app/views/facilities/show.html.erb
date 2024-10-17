@@ -1,4 +1,9 @@
-<%= render "shared/map", markers: @markers, class: "map-small" %>
+<div class="map-small"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <h2>Facility Details</h2>
 <p><%= @facility.name %></p>
 <p><%= @facility.address %></p>
