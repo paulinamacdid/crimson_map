@@ -5,27 +5,32 @@
 </div>
 
 <div>
-  <ul>
-  <% @facilities.each do |facility| %>
-    <li><%= facility.name %></li>
-    <li><%= facility.rating %></li>
-    <li><%= facility.address %></li>
-      <% if facility.toilet %>
-        <i class="fa-solid fa-toilet"></i>
-      <% end %>
-      <% if facility.sanitary_products %>
-        <i class="fa-solid fa-person-dress"></i>
-      <% end %>
-      <% if facility.baby_change %>
-        <i class="fa-solid fa-baby"></i>
-      <% end %>
-      <% if facility.quiet_place %>
-        <i class="fa-solid fa-volume-xmark"></i>
-      <% end %>
-      <% if facility.education %>
-        <i class="fa-solid fa-book"></i>
-      <% end %>
-    <%= link_to "Details", facility_path(facility), class: "btn btn-leaf" %>
-  <% end %>
-  </ul>
+  <h2 class="title">Top rated facilities in your area:</h2>
+    <% @facilities.each do |facility| %>
+    <div class="d-flex">
+      <div class="facility-background-card">
+        <div class="paragraph facility-white-card">
+          <h3><%= facility.name %></h3>
+          <h4><i class="fa-solid fa-star"></i> <%= facility.rating %></h4>
+          <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
+            <% if facility.toilet %>
+              <i class="fa-solid fa-toilet toilet"></i>
+            <% end %>
+            <% if facility.sanitary_products %>
+              <i class="fa-solid fa-person-dress sanitary-products"></i>
+            <% end %>
+            <% if facility.baby_change %>
+              <i class="fa-solid fa-baby baby-change"></i>
+            <% end %>
+            <% if facility.quiet_place %>
+              <i class="fa-solid fa-volume-xmark quiet"></i>
+            <% end %>
+            <% if facility.education %>
+              <i class="fa-solid fa-book education"></i>
+            <% end %>
+          <%= link_to "Details", facility_path(facility), class: "btn btn-leaf" %>
+        </div>
+      </div>
+      </div>
+    <% end %>
 </div>
