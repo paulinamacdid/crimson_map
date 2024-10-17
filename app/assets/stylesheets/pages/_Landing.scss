@@ -1,0 +1,29 @@
+.background {
+  background-color: $turquoise;
+  height: 100vh;
+  width: 100%;
+}
+
+.landing-text {
+  padding-top: 45%;
+  text-align: center;
+  font: $headers-font;
+  color: white;
+}
+
+.smaller-landing-text {
+  text-align: center;
+  font: $body-font;
+  color: white;
+}
+
+.enter-link {
+  text-decoration: none;
+  text-align: center;
+  font: $body-font;
+  color: white;
+  font-size: 15pt;
+  &:hover {
+    color: #b7edef
+  }
+}
