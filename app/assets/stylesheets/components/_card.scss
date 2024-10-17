@@ -1,0 +1,41 @@
+.facility-background-card {
+border-color: black;
+border: solid;
+border-width: 5px thick;
+background-color: $green;
+border-radius: 5px;
+margin: 20px;
+}
+
+.facility-white-card {
+background-color: $white;
+border-radius: 5px;
+color: black;
+font-size: 12px;
+margin: 20px;
+padding: 20px;
+}
+
+.fa-star {
+  color: $turquoise;
+}
+
+.toilet {
+  color: $yellow;
+}
+
+.quiet {
+  color: $turquoise;
+}
+
+.education {
+  color: $orange;
+}
+
+.baby-change {
+  color: $blue;
+}
+
+.sanitary-products {
+  color: $red;
+}
