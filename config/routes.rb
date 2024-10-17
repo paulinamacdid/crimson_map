@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get "root", to: "pages#landing_page"
 
   resources :facilities, only: [ :index, :show ] do
-    resources :reviews, only:  :create
+    resources :reviews, only:  [ :create, :new ]
     resources :favourites, only: :create
     resources :routes, only: [ :show, :create ]
   end

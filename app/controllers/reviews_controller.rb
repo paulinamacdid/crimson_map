@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def new
-    #@review = Review.new
+    @review = Review.new
+    @facility = Facility.find(params[:facility_id])
   end
 
   def create
