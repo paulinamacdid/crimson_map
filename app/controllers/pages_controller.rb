@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @facilities = Facility.all
-    # Facility.near('London, NE, UK')
+    Facility.near('London, NE, UK')
     # add line of code that only pulls facilities that are a rating 4 and above
   end
 
