@@ -3,28 +3,38 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+<%# how to get the map location to display? %>
 
-<h2>Facility Details</h2>
-<p><%= @facility.name %></p>
-<p><%= @facility.address %></p>
-<p><%= @facility.rating %></p>
-<p><%= @facility.toilet %></p>
-<p><%= @facility.sanitary_products %></p>
-<p><%= @facility.baby_change %></p>
-<p><%= @facility.quiet_place %></p>
-<p><%= @facility.education %></p>
+<div>
+  <h3><%= @facility.name %></h3>
+  <p><%= @facility.address %></p>
+  <p><%= @facility.rating %> stars </p>
+  <% if @facility.toilet %>
+    <i class="fa-solid fa-toilet"></i>
+  <% end %>
+  <% if @facility.sanitary_products %>
+    <i class="fa-solid fa-person-dress"></i>
+  <% end %>
+  <% if @facility.baby_change %>
+    <i class="fa-solid fa-baby"></i>
+  <% end %>
+  <% if @facility.quiet_place %>
+    <i class="fa-solid fa-volume-xmark"></i>
+  <% end %>
+  <% if @facility.education %>
+    <i class="fa-solid fa-book"></i>
+  <% end %>
+</div>
 
+<div>
+  <% @facility.reviews.each do |review| %>
+    <p><%= review.comment %></p>
+    <p><%= '⭐️' * review.rating %></p>
+  <% end %>
+</div>
 
-<% @facility.reviews.each do |review| %>
-  <p><%= review.comment %></p>
-  <p><%= '⭐️' * review.rating %></p>
-<% end %>
+<%= link_to "take me there", class: "btn btn-leaf" %>
+<%= link_to "create a review", new_facility_review_path(@facility), class: "btn btn-leaf" %>
+<%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "btn btn-leaf" %> %>
 
-
-
-<h2>Write a review for <%= @facility.name %></h2>
-<%= simple_form_for [@facility, @review] do |f| %>
-  <%= f.input :comment, label: false, placeholder: "comment here..." %>
-  <%= f.input :rating, collection: 0..5, label: false %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<%# <h3><%= back font awesome or little emoji that indicates this %>

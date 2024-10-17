@@ -10,11 +10,21 @@
     <li><%= facility.name %></li>
     <li><%= facility.rating %></li>
     <li><%= facility.address %></li>
-     <% if facility.toilet.attatched? %>
-     <% if facility.sanitary_products.attatched? %>
-     <% if facility.baby_change.attatched? %>
-     <% if facility.quiet_place.attatched? %>
-     <% if facility.education.attatched? %>
+      <% if facility.toilet %>
+        <i class="fa-solid fa-toilet"></i>
+      <% end %>
+      <% if facility.sanitary_products %>
+        <i class="fa-solid fa-person-dress"></i>
+      <% end %>
+      <% if facility.baby_change %>
+        <i class="fa-solid fa-baby"></i>
+      <% end %>
+      <% if facility.quiet_place %>
+        <i class="fa-solid fa-volume-xmark"></i>
+      <% end %>
+      <% if facility.education %>
+        <i class="fa-solid fa-book"></i>
+      <% end %>
     <%= link_to "Details", facility_path(facility), class: "btn btn-leaf" %>
   <% end %>
   </ul>
