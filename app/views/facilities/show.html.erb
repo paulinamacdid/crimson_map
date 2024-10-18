@@ -6,35 +6,41 @@
 <%# how to get the map location to display? %>
 
 <div>
-  <h3><%= @facility.name %></h3>
-  <p><%= @facility.address %></p>
-  <p><%= @facility.rating %> stars </p>
-  <% if @facility.toilet %>
-    <i class="fa-solid fa-toilet"></i>
-  <% end %>
-  <% if @facility.sanitary_products %>
-    <i class="fa-solid fa-person-dress"></i>
-  <% end %>
-  <% if @facility.baby_change %>
-    <i class="fa-solid fa-baby"></i>
-  <% end %>
-  <% if @facility.quiet_place %>
-    <i class="fa-solid fa-volume-xmark"></i>
-  <% end %>
-  <% if @facility.education %>
-    <i class="fa-solid fa-book"></i>
-  <% end %>
+    <div class="d-flex">
+      <div class="facility-background-card">
+        <div class="paragraph facility-white-card">
+          <div class="facility-info-large-card">
+            <h1><%= @facility.name %></h1>
+            <h3 class="text-wrap" style="width: 18rem;"><%= @facility.address %></h3>
+            <h3> <i class="fa-solid fa-star"></i><%= @facility.rating %> </h3>
+            <% if @facility.toilet %>
+              <i class="fa-solid fa-toilet toilet"></i>
+            <% end %>
+            <% if @facility.sanitary_products %>
+              <i class="fa-solid fa-person-dress sanitary-products"></i>
+            <% end %>
+            <% if @facility.baby_change %>
+              <i class="fa-solid fa-baby baby-change"></i>
+            <% end %>
+            <% if @facility.quiet_place %>
+              <i class="fa-solid fa-volume-xmark quiet"></i>
+            <% end %>
+            <% if @facility.education %>
+              <i class="fa-solid fa-book education"></i>
+            <% end %>
+          </div>
+          <div>
+            <h2 class="title mt-3">Reviews:</h2>
+              <% @facility.reviews.each do |review| %>
+                <h3><i class="fa-solid fa-star paragraph"></i><%= review.rating %></h3>
+                <p class="paragraph"><%= review.comment %></p>
+              <% end %>
+          </div>
+            <%= link_to "take me there", class: "button" %>
+            <%= link_to "create a review", new_facility_review_path(@facility), class: "button" %>
+            <%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "button" %>
+        </div>
+      </div>
+    </div>
+
 </div>
-
-<div>
-  <% @facility.reviews.each do |review| %>
-    <p><%= review.comment %></p>
-    <p><%= '⭐️' * review.rating %></p>
-  <% end %>
-</div>
-
-<%= link_to "take me there", class: "button" %>
-<%= link_to "create a review", new_facility_review_path(@facility), class: "button" %>
-<%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "button" %> %>
-
-<%# <h3><%= back font awesome or little emoji that indicates this %>

@@ -6,6 +6,7 @@
 }
 
 .facility-white-card {
+  position: relative;
   background-color: $white;
   border-radius: 2px;
   color: black;
@@ -36,4 +37,19 @@
 
 .sanitary-products {
   color: $red;
+}
+
+.heart {
+  font-size: 30px;
+  color: $turquoise;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+.colour-heart {
+  font-size: 30px;
+  color: $turquoise;
+  position: absolute;
+  right: 10px;
+  top: 8px;
 }
