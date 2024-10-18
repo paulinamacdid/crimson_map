@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :facilities, only: [ :index, :show ] do
     resources :reviews, only:  [ :create, :new ]
     resources :favourites, only: :create
-    resources :routes, only: [ :show, :create ]
+    resources :routes, only: [ :index, :show, :create ]
   end
   resources :favourites, only: [ :index, :update ]
 end
