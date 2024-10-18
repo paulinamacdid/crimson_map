@@ -4,7 +4,18 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Josefin Slab", "serif";
+  font-size: 18px;
+  font-weight: 400;
+  border: solid 4px black;
+  border-radius: 1px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  width: 300px;
+  border: 4px solid $black;
+  height: 60px;
+  background-color: #eeeeee;
 }
 
 .map-small {
