@@ -1,8 +1,12 @@
-<div>
-  <h3>Been to <%= @facility.name %>? Write a review...</h3>
-  <%= simple_form_for [@facility, @review] do |f| %>
-    <%= f.input :comment, label: false, placeholder: "comment here..." %>
-    <%= f.input :rating, collection: 0..5, label: "rate your experience", placeholder: "leave a rating..." %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
-  <% end %>
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 border">
+      <h3>Been to <%= @facility.name %>? Write a review...</h3>
+      <%= simple_form_for [@facility, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5, label: "rate your experience", placeholder: "leave a rating..." %>
+        <%= f.input :comment, label: false, placeholder: "comment here..." %>
+        <%= f.submit "Submit review", class: "button", style: "margin-bottom: 10px;" %>
+      <% end %>
+    </div>
+  </div>
 </div>

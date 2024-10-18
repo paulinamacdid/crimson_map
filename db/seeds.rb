@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "cleaning the database first..."
+
 Review.destroy_all
 Favourite.destroy_all
 Facility.destroy_all
