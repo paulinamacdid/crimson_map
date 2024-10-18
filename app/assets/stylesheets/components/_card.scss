@@ -1,19 +1,17 @@
 .facility-background-card {
-border-color: black;
-border: solid;
-border-width: 5px thick;
-background-color: $green;
-border-radius: 5px;
-margin: 20px;
+  border: solid 4px $black;
+  background-color: $green;
+  border-radius: 2px;
+  margin: 20px;
 }
 
 .facility-white-card {
-background-color: $white;
-border-radius: 5px;
-color: black;
-font-size: 12px;
-margin: 20px;
-padding: 20px;
+  background-color: $white;
+  border-radius: 2px;
+  color: black;
+  font-size: 12px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .fa-star {
