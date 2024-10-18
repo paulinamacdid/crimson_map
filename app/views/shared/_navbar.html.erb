@@ -11,14 +11,10 @@
 </div>
   </div>
   <div>
-      <%= link_to "#", class: "navbar-brand" do %>
-        <i class="fa-solid fa-map"></i>
-      <% end %>
-  </div>
+  <%= link_to raw('<i class="fa-solid fa-map"></i>'), facilities_path, class: "navbar-brand" %>
+</div>
   <div>
-      <%= link_to "#", class: "navbar-brand" do %>
-        <i class="fa-regular fa-heart"></i>
-      <% end %>
+      <%= link_to raw('<i class="fa-regular fa-heart"></i>'), favourites_path, class: "navbar-brand" %>
   </div>
   <div>
       <%= link_to "#", class: "navbar-brand" do %>
@@ -28,6 +24,5 @@
   <% else %>
     <div class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
   <% end %>
 </div>
