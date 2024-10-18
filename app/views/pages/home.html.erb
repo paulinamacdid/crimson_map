@@ -7,8 +7,8 @@
 <div>
   <h2 class="title mt-3">Top rated facilities in your area:</h2>
     <% @facilities.each do |facility| %>
-    <div class="d-flex">
-      <div class="facility-background-card">
+    <div class="d-flex flex-row mb-3">
+      <div class="facility-background-card p-2">
         <div class="paragraph facility-white-card">
           <h3><%= facility.name %></h3>
           <h4><i class="fa-solid fa-star"></i> <%= facility.rating %></h4>
