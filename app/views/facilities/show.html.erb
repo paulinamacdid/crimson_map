@@ -6,41 +6,39 @@
 <%# how to get the map location to display? %>
 
 <div>
-    <div class="d-flex">
       <div class="facility-background-card">
         <div class="paragraph facility-white-card">
-          <div class="facility-info-large-card">
+          <div class="facility-info-small-card">
             <h1><%= @facility.name %></h1>
-            <h3 class="text-wrap" style="width: 18rem;"><%= @facility.address %></h3>
             <h3> <i class="fa-solid fa-star"></i><%= @facility.rating %> </h3>
+            <h3><%= @facility.address %></h3>
             <% if @facility.toilet %>
-              <i class="fa-solid fa-toilet toilet"></i>
+              <i class="fa-solid fa-toilet toilet large_icon"></i>
             <% end %>
             <% if @facility.sanitary_products %>
-              <i class="fa-solid fa-person-dress sanitary-products"></i>
+              <i class="fa-solid fa-person-dress sanitary-products large_icon"></i>
             <% end %>
             <% if @facility.baby_change %>
-              <i class="fa-solid fa-baby baby-change"></i>
+              <i class="fa-solid fa-baby baby-change large_icon"></i>
             <% end %>
             <% if @facility.quiet_place %>
-              <i class="fa-solid fa-volume-xmark quiet"></i>
+              <i class="fa-solid fa-volume-xmark quiet large_icon"></i>
             <% end %>
             <% if @facility.education %>
-              <i class="fa-solid fa-book education"></i>
+              <i class="fa-solid fa-book education large-icon"></i>
             <% end %>
+            <div>
+              <h2 class="title mt-3">Reviews:</h2>
+                <% @facility.reviews.each do |review| %>
+                  <h3><i class="fa-solid fa-star paragraph"></i><%= review.last.rating %></h3>
+                  <p class="paragraph text-wrap" style="width: 30rem;"><%= review.last.comment %></p>
+                <% end %>
+            </div class="d-flex justify-content-evenly">
+              <%= link_to "take me there", "", class: "button show-btn" %>
+              <%= link_to "create a review", new_facility_review_path(@facility), class: "button show-btn" %>
+              <%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "button" %>
           </div>
-          <div>
-            <h2 class="title mt-3">Reviews:</h2>
-              <% @facility.reviews.each do |review| %>
-                <h3><i class="fa-solid fa-star paragraph"></i><%= review.rating %></h3>
-                <p class="paragraph"><%= review.comment %></p>
-              <% end %>
-          </div>
-            <%= link_to "take me there", class: "button" %>
-            <%= link_to "create a review", new_facility_review_path(@facility), class: "button" %>
-            <%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "button" %>
         </div>
       </div>
-    </div>
 
 </div>

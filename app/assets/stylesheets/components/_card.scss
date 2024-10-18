@@ -15,28 +15,48 @@
   padding: 20px;
 }
 
+.facility-info-small-card {
+  text-align: center;
+}
+
+
 .fa-star {
   color: $turquoise;
 }
 
 .toilet {
   color: $yellow;
+  &.large_icon{
+    font-size: 40px;
+  }
 }
 
 .quiet {
   color: $turquoise;
+  &.large_icon{
+    font-size: 40px;
+  }
 }
 
 .education {
   color: $orange;
+  &.large_icon{
+    font-size: 40px;
+  }
 }
 
 .baby-change {
   color: $blue;
+  &.large_icon{
+    font-size: 40px;
+  }
 }
 
 .sanitary-products {
   color: $red;
+  &.large_icon{
+    font-size: 40px;
+  }
 }
 
 .heart {
@@ -53,3 +73,4 @@
   right: 10px;
   top: 8px;
 }
+
