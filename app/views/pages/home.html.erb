@@ -6,40 +6,42 @@
 
 <div>
   <h2 class="title mt-3">Top rated facilities in your area:</h2>
+  <div class="card-container">
     <% @facilities.each do |facility| %>
-    <div class="d-flex">
-      <div class="facility-background-card">
-        <div class="paragraph facility-white-card">
-          <div data-controller="favourites">
-            <%= link_to facility_favourites_path(facility), data: { turbo_method: :post} do %>
-              <% if facility.favourites.find { |facility| facility.user == current_user  } %>
-                  <i data-favourites-target="solidHeart", data-action="click->favourites#unfavourite", class="fa-solid fa-heart colour-heart"></i>
-              <% else %>
-                <i data-favourites-target="clearHeart", data-action="click->favourites#favourite", class="fa-regular fa-heart heart"></i>
+      <div class="d-flex">
+        <div class="facility-background-card">
+          <div class="paragraph facility-white-card">
+            <div data-controller="favourites">
+              <%= link_to facility_favourites_path(facility), data: { turbo_method: :post} do %>
+                <% if facility.favourites.find { |facility| facility.user == current_user  } %>
+                    <i data-favourites-target="solidHeart", data-action="click->favourites#unfavourite", class="fa-solid fa-heart colour-heart"></i>
+                <% else %>
+                  <i data-favourites-target="clearHeart", data-action="click->favourites#favourite", class="fa-regular fa-heart heart"></i>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+            <h3><%= facility.name %></h3>
+            <h4><i class="fa-solid fa-star"></i> <%= facility.rating %></h4>
+            <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
+              <% if facility.toilet %>
+                <i class="fa-solid fa-toilet toilet"></i>
+              <% end %>
+              <% if facility.sanitary_products %>
+                <i class="fa-solid fa-person-dress sanitary-products"></i>
+              <% end %>
+              <% if facility.baby_change %>
+                <i class="fa-solid fa-baby baby-change"></i>
+              <% end %>
+              <% if facility.quiet_place %>
+                <i class="fa-solid fa-volume-xmark quiet"></i>
+              <% end %>
+              <% if facility.education %>
+                <i class="fa-solid fa-book education"></i>
+              <% end %>
+            <%= link_to "Details", facility_path(facility), class: "button home-btn" %>
           </div>
-          <h3><%= facility.name %></h3>
-          <h4><i class="fa-solid fa-star"></i> <%= facility.rating %></h4>
-          <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
-            <% if facility.toilet %>
-              <i class="fa-solid fa-toilet toilet"></i>
-            <% end %>
-            <% if facility.sanitary_products %>
-              <i class="fa-solid fa-person-dress sanitary-products"></i>
-            <% end %>
-            <% if facility.baby_change %>
-              <i class="fa-solid fa-baby baby-change"></i>
-            <% end %>
-            <% if facility.quiet_place %>
-              <i class="fa-solid fa-volume-xmark quiet"></i>
-            <% end %>
-            <% if facility.education %>
-              <i class="fa-solid fa-book education"></i>
-            <% end %>
-          <%= link_to "Details", facility_path(facility), class: "button" %>
         </div>
-      </div>
-      </div>
+        </div>
     <% end %>
+  </div>
 </div>
