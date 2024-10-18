@@ -1,10 +1,11 @@
 class FavouritesController < ApplicationController
   def create
     @favourite = Favourite.new
-    @user = current_user
-    @favourite.user = @user
+    @favourite.user = current_user
+    @facility = Facility.find(params[:facility_id])
+    @favourite.facility = @facility
     if @favourite.save
-      redirect_to facilities_path
+      redirect_to home_path
     else
       @favourite = Favourite.new
       render :new, status: :unprocessable_entity
@@ -12,7 +13,6 @@ class FavouritesController < ApplicationController
   end
 
   def index
-    @favourites = Favourite.all
   end
 
   def update
