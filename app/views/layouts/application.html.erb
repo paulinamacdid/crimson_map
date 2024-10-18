@@ -18,10 +18,15 @@
   </head>
 
   <body>
- ><%= render "shared/logo" %>
- </div>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%= render "shared/navbar" %>
+    <% unless controller_name == 'pages' && action_name == 'landing_page' %>
+      <%= render "shared/logo" %>
+    <% end %>
+
+      <%= render "shared/flashes" %>
+      <%= yield %>
+
+    <% unless controller_name == 'pages' && action_name == 'landing_page' %>
+      <%= render "shared/navbar" %>
+    <% end %>
   </body>
 </html>
