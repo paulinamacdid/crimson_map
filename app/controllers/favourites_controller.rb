@@ -13,7 +13,7 @@ class FavouritesController < ApplicationController
   end
 
   def index
-    @favourites = Favourite.all
+    @favourites = Favourite.where(user: current_user)
   end
 
   def update
