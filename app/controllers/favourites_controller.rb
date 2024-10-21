@@ -13,6 +13,7 @@ class FavouritesController < ApplicationController
   end
 
   def index
+    @favourites = Favourite.all
   end
 
   def update
