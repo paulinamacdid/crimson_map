@@ -7,6 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "json"
+require "open-uri"
+require 'dotenv'
+
+Dotenv.load
 puts "cleaning the database first..."
 
 Review.destroy_all
@@ -167,3 +172,13 @@ Review.create!(comment: "Toilet works fine, but lacks comfort and features. Coul
 Review.create!(comment: "Great toilet, always clean, but disappointed the free sanitary products were out last time.", rating: 3, facility: sutton_library, user: gabriela)
 Review.create!(comment: "What a lovely little library with free organic sanitary products. Sheena, the owner, even offered me a free hot chocolate. It was such a welcoming touch I'll definitely be back", rating: 5, facility: sheenas_free_little_library, user: gabriela)
 Review.create!(comment: "a surprisingly gorgeous spot to change sanitary products, great ambience, very clean, many toilets", rating: 4, facility: british_library, user: gabriela)
+
+api_token = ENV['GOOGLE_API_KEY']
+url = "https://places.googleapis.com/$discovery/rest?version=v1&key=#{api_token}"
+facilities_serialized = URI.parse(url).read
+places = JSON.parse(facilities_serialized)
+
+puts places
+# places["places"].each do |place|
+#   Facility.create!(name: place["places"], address:, opening_hours:, toilet: )
+# # end
