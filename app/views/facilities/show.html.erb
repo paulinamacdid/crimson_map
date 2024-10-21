@@ -28,10 +28,14 @@
             <% end %>
             <div>
               <h2 class="title mt-3">Reviews:</h2>
-                <% @facility.reviews.each do |review| %>
-                  <h3><i class="fa-solid fa-star paragraph"></i><%= review.last.rating %></h3>
-                  <p class="paragraph text-wrap" style="width: 30rem;"><%= review.last.comment %></p>
-                <% end %>
+              <% if @facility.reviews.empty? %>
+              <p> currently no reviews... leave one here </p>
+                <% else %>
+                <%# <% @facility.reviews.each do |review| %> %>
+                  <h3><i class="fa-solid fa-star paragraph"></i><%= @facility.reviews.last.rating %></h3>
+                  <p class="paragraph text-wrap" style="width: 30rem;"><%= @facility.reviews.last.comment %></p>
+                <%# <% end %> %>
+              <% end %>
             </div class="d-flex justify-content-evenly">
               <%= link_to "take me there", "", class: "button show-btn" %>
               <%= link_to "create a review", new_facility_review_path(@facility), class: "button show-btn" %>
