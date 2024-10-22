@@ -1,3 +1,4 @@
+<%# facilities index page html listed below %>
 <div class="map-large"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
@@ -8,5 +9,5 @@
   window.setTimeout(() => {
       document.querySelector(".mapboxgl-ctrl-geolocate").click();
 
-    }, 2000);
+    }, 200);
 </script>
