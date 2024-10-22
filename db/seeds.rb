@@ -7,6 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "json"
+require "open-uri"
+require 'dotenv'
+
+Dotenv.load
 puts "cleaning the database first..."
 
 Review.destroy_all
@@ -182,3 +187,14 @@ Blog.create!(title: "Endometriosis at Work", content: "One in six people with en
                       author: "Sally Campbell", url: "https://www.endometriosis-uk.org/new-campaign-endometriosis-work")
 
 puts "done, created #{Blog.count} blog"
+
+api_token = ENV['GOOGLE_API_KEY']
+url = "https://places.googleapis.com/$discovery/rest?version=v1&key=#{api_token}"
+facilities_serialized = URI.parse(url).read
+places = JSON.parse(facilities_serialized)
+
+puts places
+# places["places"].each do |place|
+#   Facility.create!(name: place["places"], address:, opening_hours:, toilet: )
+# # end
+
