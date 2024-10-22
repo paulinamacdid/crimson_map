@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # get "my_profile", to: "pages#my_profile"
   root to: "pages#landing_page"
   get "home", to: "pages#home"
-  resources :facilities, only: [ :index, :show ] do
+  resources :facilities, only: [ :index, :show, :new, :create ] do
     resources :reviews, only:  [ :create, :new ]
     resources :favourites, only: :create
     resources :routes, only: [ :show, :create ]
