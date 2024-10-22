@@ -4,15 +4,21 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map'>
 </div>
 
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+            <% if @facility.image.attached? %>
+              url( '<%= cl_image_path @facility.image.key, height: 300, width: 400, crop: :fill %>' )
+            <% else %>
+              url( '<%= @facility.image %>' )
+            <% end %>
+              ;">
+</div>
 <div>
       <div class="facility-background-card">
         <div class="paragraph facility-white-card">
           <div class="facility-info-small-card">
             <h1><%= @facility.name %></h1>
             <h3>
-              <% ratings = @facilities.map(&:rating) %>
-              <% average = (ratings.sum / ratings.count).floor(1) unless ratings.empty? %>
-              <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
+              <div class="stars" style="--rating<d: <%= @average %>;" aria-label="Rating of this product is <%= @average %> out of 5."></div>
             </h3>
             <h3><%= @facility.address %></h3>
             <% if @facility.toilet %>

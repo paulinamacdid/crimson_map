@@ -23,6 +23,11 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.all
     @facility = Facility.find(params[:id])
     @review = Review.new
+    @reviews = @facility.reviews
+    if !@reviews.empty?
+      @ratings = @reviews.map{|review| review.rating}
+      @average = (@ratings.sum / @ratings.count).floor(1)
+    end
     # geocoded_facility = @facility.geocode
     @marker = [{
       lat: @facility.latitude,
@@ -30,6 +35,10 @@ class FacilitiesController < ApplicationController
       info_window_html: render_to_string(partial: "info_window", locals: { facility: @facility }),
       marker_html: render_to_string(partial: "marker", locals: { facility: @facility })
     }]
+  end
+
+  def new
+    @facility = Facility.new
   end
 
   def create

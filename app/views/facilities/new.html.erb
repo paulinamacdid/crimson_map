@@ -1,20 +1,25 @@
 <div class="container my-3">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-4 border">
+    <div class="col-12 col-sm-6 border">
       <h1>Add a new facility here:</h1>
-        <%= simple_form_for(@facilty) do |f| %>
+        <%= simple_form_for @facility do |f| %>
           <%= f.input :name %>
           <%= f.input :address %>
           <%= f.input :opening_hours %>
-          <%= f.collection_radio_buttons :toilet, [[true, 'Yes'], [false, 'No']], :first, :last %>
-          <%= f.collection_radio_buttons :sanitary_products, [[true, 'Yes'], [false, 'No']], :first, :last %>
-          <%= f.collection_radio_buttons :baby_change, [[true, 'Yes'], [false, 'No']], :first, :last %>
-          <%= f.collection_radio_buttons :quiet_place, [[true, 'Yes'], [false, 'No']], :first, :last %>
-          <%= f.collection_radio_buttons :education, [[true, 'Yes'], [false, 'No']], :first, :last %>
-          <%= f.input :photo, as: :file %>
+          <%= f.label :toilet, "Are there bathrooms available?" %>
+          <%= f.check_box :toilet %>
+          <%= f.label :sanitary_products, "Does it have free sanitary products available?" %>
+          <%= f.check_box :sanitary_products %>
+          <%= f.label :baby_change, "Does the facility have a baby change?" %>
+          <%= f.check_box :baby_change %>
+          <%= f.label :quiet_place, "Did this facility have a calm environment and a quiet place where you can retreat to?" %>
+          <%= f.check_box :quiet_place %>
+          <%= f.label :education, "Is this facility a place of learning (e.g. offers workshops, courses, a museum)?" %>
+          <%= f.check_box :education %>
+          <%= f.input :image, as: :file %>
           <%= f.submit class: "button" %>
         <% end %>
-      <%= link_to 'back', categories_path, class: "btn btn-dark my-2" %>
+      <%= link_to 'back', facilities_path, class: "button" %>
     </div>
   </div>
 </div>
