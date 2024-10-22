@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-around">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-around fixed-bottom">
   <div>
     <% if user_signed_in? %>
       <div class="nav-item dropup">
@@ -25,4 +25,5 @@
     <div class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
   <% end %>
+</div>
 </div>

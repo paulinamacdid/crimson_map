@@ -35,6 +35,11 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.all
     @facility = Facility.find(params[:id])
     @review = Review.new
+    @reviews = @facility.reviews
+    if !@reviews.empty?
+      @ratings = @reviews.map{|review| review.rating}
+      @average = (@ratings.sum / @ratings.count).floor(1)
+    end
     # geocoded_facility = @facility.geocode
     @marker = [{
       lat: @facility.latitude,
@@ -44,8 +49,13 @@ class FacilitiesController < ApplicationController
     }]
   end
 
+  def new
+    @facility = Facility.new
+  end
+
   def create
     @facility = Facility.new(facility_params)
+    raise
     if  @facility.save
       redirect_to facility_path(@facility)
     else
