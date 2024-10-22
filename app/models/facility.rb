@@ -9,11 +9,4 @@ class Facility < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   has_one_attached :image
-  include PgSearch::Model
-  search_columns = %i[toilet baby_change education quiet_place sanitary_products]
-  pg_search_scope :search_by_everything,
-                  against: search_columns,
-                  using: {
-                    tsearch: { prefix: true }
-                  }
 end

@@ -7,15 +7,15 @@
           <%= f.input :address %>
           <%= f.input :opening_hours %>
           <%= f.label :toilet, "Are there bathrooms available?" %>
-          <%= f.check_box :toilet %>
+          <%= f.check_box :toilet, as: :boolean %>
           <%= f.label :sanitary_products, "Does it have free sanitary products available?" %>
-          <%= f.check_box :sanitary_products %>
+          <%= f.check_box :sanitary_products, as: :boolean %>
           <%= f.label :baby_change, "Does the facility have a baby change?" %>
-          <%= f.check_box :baby_change %>
+          <%= f.check_box :baby_change, as: :boolean %>
           <%= f.label :quiet_place, "Did this facility have a calm environment and a quiet place where you can retreat to?" %>
-          <%= f.check_box :quiet_place %>
+          <%= f.check_box :quiet_place, as: :boolean %>
           <%= f.label :education, "Is this facility a place of learning (e.g. offers workshops, courses, a museum)?" %>
-          <%= f.check_box :education %>
+          <%= f.check_box :education, as: :boolean %>
           <%= f.input :image, as: :file %>
           <%= f.submit class: "button" %>
         <% end %>
