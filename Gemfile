@@ -41,11 +41,8 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "geocoder"
-<<<<<<< HEAD
 gem "pg_search"
-=======
 gem "cloudinary"
->>>>>>> d997c0fe521394689fd0441f89802cd948ad4130
 
 group :development, :test do
   gem "dotenv-rails"
