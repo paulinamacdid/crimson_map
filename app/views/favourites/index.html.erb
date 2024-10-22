@@ -27,6 +27,9 @@
         </div>
       </div>
       </div>
+      <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
     <% end %>
 </div>
 <div>
