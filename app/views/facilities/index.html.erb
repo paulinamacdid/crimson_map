@@ -1,8 +1,26 @@
-<div class="map-large"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <i data-action="click->map#filterButton", class="fa-solid fa-grip-lines filter-btn"></i>
+
+  <div id='map' class="map-large">
+  </div>
+
+  <div data-map-target="filtersForm", class="d-none">
+    <%= simple_form_for(@facility) do |form| %>
+      <%= form.input :toilet %>
+      <%= form.input :baby_change %>
+      <%= form.input :education %>
+      <%= form.input :sanitary_products %>
+      <%= form.input :quiet_place %>
+    <% end %>
+  </div>
 </div>
+
+<%# <% @markers.select do |marker| %> %>
+<%# <% if marker.facility.toilet ? { marker.facility : } %> %>
+  <%# <% end %> %>
 
 <script>
   window.setTimeout(() => {
