@@ -29,14 +29,20 @@ export default class extends Controller {
         mapboxgl: mapboxgl,
       })
     );
-    const geoLocate = new mapboxgl.GeolocateControl({
-      positionOptions: {
-        enableHighAccuracy: true,
-      },
-      trackUserLocation: true,
-      showUserHeading: true,
-    });
-    this.map.addControl(geoLocate);
+    setTimeout(() => {
+      const geoLocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        trackUserLocation: true,
+        showUserHeading: true,
+      });
+      console.log(geoLocate.lastKnowPosition)
+      this.map.addControl(geoLocate);
+    }, 3000);
+
+    // geoLocate.trigger();
+
   }
 
 
@@ -62,6 +68,7 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 
+
   addFilter() {
   }
 
@@ -75,4 +82,5 @@ export default class extends Controller {
   hideFilters() {
     this.filtersFormTarget.classList.add("d-none");
   }
+
 }

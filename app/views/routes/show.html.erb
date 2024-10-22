@@ -1,0 +1,13 @@
+<%# facilities index page html listed below %>
+<div class="map-large"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<script>
+  window.setTimeout(() => {
+      document.querySelector(".mapboxgl-ctrl-geolocate").click();
+
+    }, 200);
+</script>
