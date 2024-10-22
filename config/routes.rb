@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: :destroy
   resources :favourites, only: [ :index, :update ]
+  resources :favourites, only: [ :index, :show, :destroy ]
   resources :blogs, only: [ :index, :show,]
 end
