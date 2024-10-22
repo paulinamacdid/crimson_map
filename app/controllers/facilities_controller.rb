@@ -1,14 +1,26 @@
 class FacilitiesController < ApplicationController
   def index
     @facility = Facility.new
-    @facilities = Facility.all
+
+    if params[:query].present?
+      case params[:query]
+      when 'toilet'
+        @facilities = Facility.where(toilet: true)
+      when 'quiet_place'
+        @facilities = Facility.where(quiet_place: true)
+      when 'sanitary_products'
+        @facilities = Facility.where(sanitary_products: true)
+      when 'baby_change'
+        @facilities = Facility.where(baby_change: true)
+      when 'education'
+        @facilities = Facility.where(education: true)
+      end
+    else
+      @facilities = Facility.all
+    end
+
     @markers = @facilities.geocoded.map do |facility|
       {
-        toilet: facility.toilet,
-        sanitary_products: facility.sanitary_products,
-        baby_change: facility.baby_change,
-        quiet_place: facility.quiet_place,
-        education: facility.education,
         lat: facility.latitude,
         lng: facility.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: { facility: }),
