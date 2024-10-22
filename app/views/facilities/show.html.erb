@@ -6,23 +6,18 @@
     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Directions</button>
   </li>
 </ul>
+
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-    <div>
-      <div class="map-opaque"
-        data-controller="map"
-        data-map-markers-value="<%= @marker.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
 
-<div class="map-opaque"
-  data-controller="map"
-  data-map-markers-value="<%= @marker.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map'>
-</div>
+    <div class="map-opaque"
+      data-controller="map"
+      data-map-markers-value="<%= @marker.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map'>
+    </div>
 
-<div>
-
+    <%# <div> %>
       <div class="facility-background-card">
         <div class="paragraph facility-white-card">
           <div class="facility-info-small-card">
@@ -44,38 +39,37 @@
             <% if @facility.education %>
               <i class="fa-solid fa-book education large-icon"></i>
             <% end %>
+
             <div class="d-flex justify-content-evenly">
               <h2 class="title mt-3">Reviews:</h2>
               <% if @facility.reviews.empty? %>
               <p> currently no reviews... leave one here </p>
                 <% else %>
-                <%# <% @facility.reviews.each do |review| %> %>
+                <%# <% @facility.reviews.each do |review| %>
                   <h3><i class="fa-solid fa-star paragraph"></i><%= @facility.reviews.last.rating %></h3>
                   <p class="paragraph text-wrap" style="width: 30rem;"><%= @facility.reviews.last.comment %></p>
-                <%# <% end %> %>
+                <%# <% end %>
               <% end %>
             </div>
-            <%= link_to "take me there", "", class: "button show-btn" %>
-            <%= link_to "create a review", new_facility_review_path(@facility), class: "button show-btn" %>
-            <%# <%= link_to <i class="fa-solid fa-arrow-rotate-left"></i>, new_facility_review_path, class: "button" %>
+
+            <%= link_to "leave a review", new_facility_review_path(@facility), class: "button show-btn" %>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <%# </div> %>
+
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-    <div class="map-large"
-      data-controller="map"
-      data-map-markers-value="<%= @marker.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div data-controller="map-large"
+        data-map-large-markers-value="<%= @marker.to_json %>"
+        data-map-large-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-url-value='<%= facilities_url %>'>
+      <button data-action="click->map-large#navigateRoute">Navigate to here!</button>
+      <div class="map-large" id= "map-large">
+        <%# button with data action which triggers navigateRoute function %>
+      </div>
     </div>
 
   </div>
+
 </div>
-
-<script>
-  window.setTimeout(() => {
-      document.querySelector(".mapboxgl-ctrl-geolocate").click();
-
-    }, 200);
-</script>
