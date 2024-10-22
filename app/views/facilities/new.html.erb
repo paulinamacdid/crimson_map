@@ -1,0 +1,20 @@
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 border">
+      <h1>Add a new facility here:</h1>
+        <%= simple_form_for(@facilty) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :opening_hours %>
+          <%= f.collection_radio_buttons :toilet, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          <%= f.collection_radio_buttons :sanitary_products, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          <%= f.collection_radio_buttons :baby_change, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          <%= f.collection_radio_buttons :quiet_place, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          <%= f.collection_radio_buttons :education, [[true, 'Yes'], [false, 'No']], :first, :last %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit class: "button" %>
+        <% end %>
+      <%= link_to 'back', categories_path, class: "btn btn-dark my-2" %>
+    </div>
+  </div>
+</div>
