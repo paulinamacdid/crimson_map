@@ -22,7 +22,11 @@
               <% end %>
             </div>
             <h3><%= facility.name %></h3>
-            <h4><i class="fa-solid fa-star"></i> <%= facility.rating %></h4>
+            <h4>
+              <% ratings = @facilities.map(&:rating) %>
+              <% average = (ratings.sum / ratings.count).floor(1) unless ratings.empty? %>
+              <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
+            </h4>
             <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
               <% if facility.toilet %>
                 <i class="fa-solid fa-toilet toilet"></i>
