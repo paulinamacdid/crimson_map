@@ -29,7 +29,7 @@ export default class extends Controller {
         mapboxgl: mapboxgl,
       })
     );
-    setTimeout(() => {
+
       const geoLocate = new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
@@ -37,9 +37,8 @@ export default class extends Controller {
         trackUserLocation: true,
         showUserHeading: true,
       });
-      console.log(geoLocate.lastKnowPosition)
       this.map.addControl(geoLocate);
-    }, 3000);
+
 
     // geoLocate.trigger();
 
