@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.2].define(version: 2024_10_22_144254) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +56,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_144254) do
     t.string "address"
     t.boolean "business_owner"
     t.float "rating"
-    t.integer "toilet"
+    t.boolean "toilet"
     t.boolean "sanitary_products"
     t.boolean "baby_change"
     t.boolean "quiet_place"

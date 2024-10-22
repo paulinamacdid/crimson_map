@@ -8,19 +8,22 @@
   </div>
 
   <div data-map-target="filtersForm", class="d-none">
-    <%= simple_form_for(@facility) do |form| %>
-      <%= form.input :toilet %>
-      <%= form.input :baby_change %>
-      <%= form.input :education %>
-      <%= form.input :sanitary_products %>
-      <%= form.input :quiet_place %>
+
+    <%= form_with url: facilities_path, method: :get do %>
+      <%= label_tag 'Toilet' %>
+      <%= check_box_tag 'query', "toilet" %>
+      <%= label_tag 'Quiet Place' %>
+      <%= check_box_tag 'query', "quiet_place" %>
+      <%= label_tag 'Sanitary Products' %>
+      <%= check_box_tag 'query', "sanitary_products" %>
+      <%= label_tag 'Baby Change' %>
+      <%= check_box_tag 'query', "baby_change" %>
+      <%= label_tag 'Education' %>
+      <%= check_box_tag 'query', "education" %>
+      <%= submit_tag "Submit", class: "button", style: "margin-bottom: 10px;" %>
     <% end %>
   </div>
 </div>
-
-<%# <% @markers.select do |marker| %> %>
-<%# <% if marker.facility.toilet ? { marker.facility : } %> %>
-  <%# <% end %> %>
 
 <script>
   window.setTimeout(() => {
