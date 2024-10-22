@@ -13,10 +13,13 @@
         <div class="facility-background-card">
           <div class="paragraph facility-white-card">
             <div data-controller="favourites">
-              <%= link_to facility_favourites_path(facility), data: { turbo_method: :post} do %>
-                <% if facility.favourites.find { |facility| facility.user == current_user  } %>
+              <% favourite = facility.favourites.find { |facility| facility.user == current_user  }%>
+              <% if facility.favourites.find { |facility| facility.user == current_user  } %>
+                  <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
                     <i data-favourites-target="solidHeart", data-action="click->favourites#unfavourite", class="fa-solid fa-heart colour-heart"></i>
+                <% end %>
                 <% else %>
+                  <%= link_to facility_favourites_path(facility), data: { turbo_method: :post} do %>
                   <i data-favourites-target="clearHeart", data-action="click->favourites#favourite", class="fa-regular fa-heart heart"></i>
                 <% end %>
               <% end %>

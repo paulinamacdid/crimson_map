@@ -17,8 +17,8 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    @favourite = Favourite.find(params[:id]) # using categories as it is a plural of get all the categories
+    @favourite = Favourite.find(params[:id])
     @favourite.destroy
-    redirect_to favourites_path status: :see_other
+    redirect_back fallback_location: root_path
   end
 end
