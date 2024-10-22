@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-4 border">
       <h3>Been to <%= @facility.name %>? Write a review...</h3>
       <%= simple_form_for [@facility, @review] do |f| %>
-        <%= f.input :rating, collection: 0..5, label: "rate your experience", placeholder: "leave a rating..." %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { data: { controller: "star-rating" } } %>
         <%= f.input :comment, label: false, placeholder: "comment here..." %>
         <%= f.submit "Submit review", class: "button", style: "margin-bottom: 10px;" %>
       <% end %>

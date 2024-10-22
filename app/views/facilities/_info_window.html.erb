@@ -1,4 +1,7 @@
 <h3><%= facility.name %></h3>
 <p><%= facility.address %></p>
-<p><%= facility.rating %></p>
+<p> <% ratings = @facilities.map(&:rating) %>
+    <% average = (ratings.sum / ratings.count).floor(1) unless ratings.empty? %>
+      <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
+</p>
 <%= link_to "Details", facility_path(facility), class: "button" %>
