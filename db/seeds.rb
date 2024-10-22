@@ -13,6 +13,7 @@ Review.destroy_all
 Favourite.destroy_all
 Facility.destroy_all
 User.destroy_all
+Blog.destroy_all
 
 puts "creating users..."
 
@@ -167,3 +168,17 @@ Review.create!(comment: "Toilet works fine, but lacks comfort and features. Coul
 Review.create!(comment: "Great toilet, always clean, but disappointed the free sanitary products were out last time.", rating: 3, facility: sutton_library, user: gabriela)
 Review.create!(comment: "What a lovely little library with free organic sanitary products. Sheena, the owner, even offered me a free hot chocolate. It was such a welcoming touch I'll definitely be back", rating: 5, facility: sheenas_free_little_library, user: gabriela)
 Review.create!(comment: "a surprisingly gorgeous spot to change sanitary products, great ambience, very clean, many toilets", rating: 4, facility: british_library, user: gabriela)
+
+puts "creating blogs..."
+
+Blog.create!(title: "Endometriosis at Work", content: "One in six people with endometriosis have to leave the workplace and is a condition that costs the economy £8.2 billion per year in loss of work and healthcare costs.
+                      This is unacceptable- nobody should face discrimination at work or risk losing their job because of their endometriosis, and we’re determined to work with the Government to ensure they protect those with menstrual health conditions in the new Bill.
+                      Earlier this month, the Government introduced an Employment Rights Bill that aims to cut down on unfair working practices. Endometriosis UK welcomes the Bill, including measures to support those going through the menopause. But the Bill must go further to ensure measures are introduced to ensure those with endometriosis have the support and protections they need in the workplace.
+                      Over the coming weeks and months, Endometriosis UK will be lobbying for changes to the Employment Rights Bill to ensure all those with menstrual health conditions, including endometriosis, have access to the support they need at work. We would like to see:
+                      Menopause action plans extended to all those impacted by menstrual health conditions including endometriosis
+                      Legislation to ensure workers with menstrual health conditions are treated fairly if they need short but intermittent time off work, as a result of their condition.
+                      The Bill is due to receive its second reading in the House of Commons this afternoon (Monday 21st October 2024).
+                      You can support the campaign by emailing your MP. Our easy-to-use template will generate an email to your MP using your postcode.",
+                      author: "Sally Campbell", url: "https://www.endometriosis-uk.org/new-campaign-endometriosis-work")
+
+puts "done, created #{Blog.count} blog"

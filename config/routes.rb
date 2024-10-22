@@ -21,4 +21,5 @@ Rails.application.routes.draw do
     resources :routes, only: [ :show, :create ]
   end
   resources :favourites, only: [ :index, :update ]
+  resources :blogs, only: [ :index, :show,]
 end

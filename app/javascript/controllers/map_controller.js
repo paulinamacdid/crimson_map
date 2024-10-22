@@ -9,15 +9,20 @@ export default class extends Controller {
     markers: Array,
   };
 
+  static targets = ["filtersForm"]
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
-      container: this.element,
+      container: 'map',
       style: "mapbox://styles/dorothea87/cm2c313mb009601pggw8k4fo2",
     });
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
+    // this.#filterButton();
+    // this.#addFilter();
+    // this.#removeFilter();
     this.map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -33,6 +38,8 @@ export default class extends Controller {
     });
     this.map.addControl(geoLocate);
   }
+
+
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
@@ -46,11 +53,26 @@ export default class extends Controller {
         .addTo(this.map);
     });
   }
+
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markersValue.forEach((marker) =>
       bounds.extend([marker.lng, marker.lat])
     );
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  }
+
+  addFilter() {
+  }
+
+  removeFilter() {
+  }
+
+  filterButton() {
+    this.filtersFormTarget.classList.remove("d-none");
+  }
+
+  hideFilters() {
+    this.filtersFormTarget.classList.add("d-none");
   }
 }
