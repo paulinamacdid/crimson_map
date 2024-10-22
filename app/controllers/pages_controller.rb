@@ -27,4 +27,10 @@ class PagesController < ApplicationController
 
   def landing_page
   end
+
+  def my_profile
+    @review = Review.where(user: current_user)
+    @facility = Facility.where(user: current_user)
+  end
+
 end

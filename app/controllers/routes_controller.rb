@@ -16,5 +16,4 @@ class RoutesController < ApplicationController
       marker_html: render_to_string(partial: "marker", locals: { facility: @facility })
     }]
     end
-  end
 end

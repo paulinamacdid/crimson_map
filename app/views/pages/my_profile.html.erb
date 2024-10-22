@@ -1,0 +1,28 @@
+<div class="container">
+  <div class= "text-center title">
+    <h1>My profile</h1>
+  </div>
+
+
+  <div class="card-container">
+    <div class= "text-center title">
+      <h3>My Reviews</h3>
+        <div class="d-flex">
+          <div class="facility-background-card">
+            <div class="paragraph facility-white-card">
+              <% if @review.length > 0 %>
+                <% @review.each do |review| %>
+                  <h4><%= review.comment %></h4>
+                  <h4><%= review.rating %></h4>
+                  <%= link_to review_path(review), class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                    <i class="fa-solid fa-x"></i>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>
