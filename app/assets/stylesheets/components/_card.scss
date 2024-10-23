@@ -1,14 +1,9 @@
-.facility-info-small-card {
-  text-align: center;
-}
-
-// background cards
-
 .facility-background-card {
-  border: solid 3px $black;
+  border: solid 4px $black;
   background-color: $green;
   border-radius: 2px;
-  margin: 8px;
+  margin: 5px;
+  width: 80dvw;
 }
 
 .facility-white-card {
@@ -17,9 +12,19 @@
   border-radius: 2px;
   color: black;
   font-size: 12px;
-  margin: 8px;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.facility-info-small-card {
+  text-align: center;
+}
+
+// background cards
 
 // icons
 
@@ -94,6 +99,12 @@
 .card-container {
   display: flex;
   overflow-x: scroll;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 //SHOW PAGE CARD

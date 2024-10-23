@@ -1,9 +1,9 @@
-<h3><%= facility.name %></h3>
-<p><%= facility.address %></p>
+<p style="margin: 3px;"><strong><%= facility.name %></strong></p>
+<p style="margin-bottom: 2px;"><%= facility.address %></p>
 <% reviews = facility.reviews %>
   <% if !reviews.empty? %>
     <% ratings = reviews.map{|review| review.rating} %>
     <% average = (ratings.sum / ratings.count).floor(1) %>
   <% end %>
 <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
-<%= link_to "Details", facility_path(facility), class: "button" %>
+<%= link_to "Details", facility_path(facility), class: "button", style: "margin-top: 5px;" %>
