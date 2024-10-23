@@ -55,7 +55,6 @@ class FacilitiesController < ApplicationController
 
   def create
     @facility = Facility.new(facility_params)
-    raise
     if  @facility.save
       redirect_to facility_path(@facility)
     else
@@ -66,6 +65,6 @@ class FacilitiesController < ApplicationController
   private
 
   def facility_params
-    params.require(:facility).permit(:name, :address, :toilet, :sanitary_products, :baby_change, :quiet_place, :education, :opening_hours, :image)
+    params.require(:facility).permit(:name, :address, :toilet, :sanitary_products, :baby_change, :quiet_place, :education, :opening_hours, :photo)
   end
 end
