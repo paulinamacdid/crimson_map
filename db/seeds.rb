@@ -9,9 +9,8 @@
 #   end
 require "json"
 require "open-uri"
-require 'dotenv'
 
-Dotenv.load
+
 puts "cleaning the database first..."
 
 Review.destroy_all
