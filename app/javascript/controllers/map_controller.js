@@ -9,13 +9,13 @@ export default class extends Controller {
     markers: Array,
   };
 
-  static targets = ["filtersForm"]
+  static targets = ["filtersForm", "geocoder"];
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
-      container: 'map',
+      container: "map",
       style: "mapbox://styles/dorothea87/cm2c313mb009601pggw8k4fo2",
     });
     this.#addMarkersToMap();
@@ -23,27 +23,30 @@ export default class extends Controller {
     // this.#filterButton();
     // this.#addFilter();
     // this.#removeFilter();
-    this.map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl,
-      })
-    );
+    // this.map.addControl(
+    //   new MapboxGeocoder({
+    //     accessToken: mapboxgl.accessToken,
+    //     mapboxgl: mapboxgl,
+    //   })
+    // );
+    this.geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+    });
 
-      const geoLocate = new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true,
-        },
-        trackUserLocation: true,
-        showUserHeading: true,
-      });
-      this.map.addControl(geoLocate);
+    this.geocoderTarget.appendChild(this.geocoder.onAdd(this.map));
 
+    const geoLocate = new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true,
+      },
+      trackUserLocation: true,
+      showUserHeading: true,
+    });
+    this.map.addControl(geoLocate);
 
     // geoLocate.trigger();
-
   }
-
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
@@ -67,12 +70,9 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   }
 
+  addFilter() {}
 
-  addFilter() {
-  }
-
-  removeFilter() {
-  }
+  removeFilter() {}
 
   filterButton() {
     this.filtersFormTarget.classList.remove("d-none");
@@ -81,5 +81,4 @@ export default class extends Controller {
   hideFilters() {
     this.filtersFormTarget.classList.add("d-none");
   }
-
 }
