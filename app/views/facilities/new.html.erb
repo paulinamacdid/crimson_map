@@ -16,7 +16,7 @@
           <%= f.check_box :quiet_place, as: :boolean %>
           <%= f.label :education, "Is this facility a place of learning (e.g. offers workshops, courses, a museum)?" %>
           <%= f.check_box :education, as: :boolean %>
-          <%= f.input :image, as: :file %>
+          <%= f.input :photo, as: :file %>
           <%= f.submit class: "button" %>
         <% end %>
       <%= link_to 'back', facilities_path, class: "button" %>
