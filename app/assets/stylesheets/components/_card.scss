@@ -25,11 +25,13 @@
 
 .fa-star {
   color: $turquoise;
+  font-size: 20px;
 }
 
 .toilet {
   color: $yellow;
   font-size: 20px;
+  margin-top: 10px;
   &.large_icon {
     font-size: 40px;
   }
@@ -38,6 +40,7 @@
 .quiet {
   color: $turquoise;
   font-size: 20px;
+  margin-top: 10px;
   &.large_icon {
     font-size: 40px;
   }
@@ -46,6 +49,7 @@
 .education {
   color: $orange;
   font-size: 20px;
+  margin-top: 10px;
   &.large_icon {
     font-size: 40px;
   }
@@ -54,6 +58,7 @@
 .baby-change {
   color: $blue;
   font-size: 20px;
+  margin-top: 10px;
   &.large_icon {
     font-size: 40px;
   }
@@ -62,6 +67,7 @@
 .sanitary-products {
   color: $red;
   font-size: 20px;
+  margin-top: 10px;
   &.large_icon {
     font-size: 40px;
   }
@@ -93,8 +99,8 @@
 //SHOW PAGE CARD
 
 .show-small-card-img-top {
-  height: 145px;
-  width: 202px;
+  height: 200px;
+  width: 250px;
   border-radius: 4px;
   border: black;
 }
@@ -102,13 +108,14 @@
 .show-facility-basic-info {
   border-radius: 4px;
   border: black;
-  height: 145px;
-  width: 202px;
+  text-align: justify center;
 }
 
 .show-small-card-reviews {
   border-radius: 4px;
   border: black;
-  height: 145px;
-  width: 202px;
+}
+
+.reviews {
+  text-align: left;
 }
