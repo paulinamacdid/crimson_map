@@ -25,6 +25,7 @@ gabriela = User.create(email: "gabbyb@gmail.com", password: "123456", first_name
 pamela = User.create(email: "pamela@gmail.com", password: "123456", first_name: "Pamela", last_name: "Gordon", age: 34)
 ivy = User.create(email: "ivy@gmail.com", password: "123456", first_name: "Ivy", last_name: "Johnson", age: 29)
 melissa = User.create(email: "mel123@gmail.com", password: "123456", first_name: "Melissa", last_name: "Walter", age: 42)
+abi = User.create(email: "abi123@gmail.com", password: "123456", first_name: "Abi", last_name: "Blenson", age: 46)
 
 puts "creating facilities..."
 oru = Facility.create!(address: "7 Throwley Way, Sutton SM1 4AF",
@@ -169,9 +170,9 @@ puts "done, created #{Facility.count} facilities"
 puts "creating reviews..."
 
 Review.create!(comment: "Toilet works fine, but lacks comfort and features. Could definitely be improved.", rating: 3, facility: oru, user: gabriela)
-Review.create!(comment: "Great toilet, always clean, but disappointed the free sanitary products were out last time.", rating: 3, facility: sutton_library, user: gabriela)
-Review.create!(comment: "What a lovely little library with free organic sanitary products. Sheena, the owner, even offered me a free hot chocolate. It was such a welcoming touch I'll definitely be back", rating: 5, facility: sheenas_free_little_library, user: gabriela)
-Review.create!(comment: "a surprisingly gorgeous spot to change sanitary products, great ambience, very clean, many toilets", rating: 4, facility: british_library, user: gabriela)
+Review.create!(comment: "Great toilet, always clean, but disappointed the free sanitary products were out last time.", rating: 3, facility: sutton_library, user: pamela)
+Review.create!(comment: "What a lovely little library with free organic sanitary products. Sheena, the owner, even offered me a free hot chocolate. It was such a welcoming touch I'll definitely be back", rating: 5, facility: sheenas_free_little_library, user: pamela)
+Review.create!(comment: "a surprisingly gorgeous spot to change sanitary products, great ambience, very clean, many toilets", rating: 4, facility: british_library, user: ivy)
 
 puts "creating blogs..."
 
