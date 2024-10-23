@@ -2,7 +2,8 @@
   border: solid 4px $black;
   background-color: $green;
   border-radius: 2px;
-  margin: 20px;
+  margin: 5px;
+  width: 80dvw;
 }
 
 .facility-white-card {
@@ -141,4 +142,10 @@
 .card-container {
   display: flex;
   overflow-x: scroll;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

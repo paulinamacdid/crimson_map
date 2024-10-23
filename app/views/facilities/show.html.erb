@@ -8,8 +8,8 @@
 </ul>
 
 <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-            <% if @facility.image.attached? %>
-              url( '<%= cl_image_path @facility.image.key, height: 300, width: 400, crop: :fill %>' )
+            <% if @facility.photo.attached? %>
+              url( '<%= cl_image_path @facility.photo.key, height: 300, width: 400, crop: :fill %>' )
             <% else %>
               url( '<%= @facility.image %>' )
             <% end %>

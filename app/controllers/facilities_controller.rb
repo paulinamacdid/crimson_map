@@ -54,6 +54,11 @@ class FacilitiesController < ApplicationController
   end
 
   def create
+    params[:toilet] == "1" ? params[:toilet] = true : params[:toilet] = false
+    params[:sanitary_products] == "1" ? params[:sanitary_products] = true : params[:sanitary_products] = false
+    params[:baby_change] == "1" ? params[:baby_change] = true : params[:baby_change] = false
+    params[:quiet_place] == "1" ? params[:quiet_place] = true : params[:quiet_place] = false
+    params[:education] == "1" ? params[:education] = true : params[:education] = false
     @facility = Facility.new(facility_params)
     if  @facility.save
       redirect_to facility_path(@facility)

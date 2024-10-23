@@ -1,6 +1,10 @@
 .logo-wrap {
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
+  width: 100px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 
 .logo {
@@ -9,8 +13,6 @@
   border-radius: 50%;
   background-color: $sanitary;
   border: 4px solid black;
-  margin-top: 3px;
-  margin-right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
