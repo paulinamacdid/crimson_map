@@ -14,7 +14,10 @@
   font-size: 12px;
   margin: 20px;
   padding: 20px;
-  height: 207px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .facility-info-small-card {
@@ -109,12 +112,11 @@
   overflow-x: scroll;
 }
 
-
 .card-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
 //SHOW PAGE CARD
 
 .show-small-card-img-top {
