@@ -5,10 +5,10 @@
 // background cards
 
 .facility-background-card {
-  border: solid 4px $black;
+  border: solid 3px $black;
   background-color: $green;
   border-radius: 2px;
-  margin: 20px;
+  margin: 8px;
 }
 
 .facility-white-card {
@@ -17,20 +17,20 @@
   border-radius: 2px;
   color: black;
   font-size: 12px;
-  margin: 20px;
-  padding: 20px;
+  margin: 8px;
+  padding: 10px;
 }
 
 // icons
 
 .fa-star {
   color: $turquoise;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .toilet {
   color: $yellow;
-  font-size: 20px;
+  font-size: 10px;
   margin-top: 10px;
   &.large_icon {
     font-size: 40px;
@@ -39,7 +39,7 @@
 
 .quiet {
   color: $turquoise;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   &.large_icon {
     font-size: 40px;
@@ -48,7 +48,7 @@
 
 .education {
   color: $orange;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   &.large_icon {
     font-size: 40px;
@@ -57,7 +57,7 @@
 
 .baby-change {
   color: $blue;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   &.large_icon {
     font-size: 40px;
@@ -66,7 +66,7 @@
 
 .sanitary-products {
   color: $red;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 10px;
   &.large_icon {
     font-size: 40px;
@@ -98,22 +98,44 @@
 
 //SHOW PAGE CARD
 
+
+.show-facility-background-card {
+  border: solid 3px $black;
+  background-color: $green;
+  border-radius: 2px;
+  margin: 8px;
+}
+
+.show-facility-white-card {
+  position: relative;
+  background-color: $white;
+  border-radius: 2px;
+  color: black;
+  font-size: 12px;
+  margin: 8px;
+  padding: 10px;
+}
+
 .show-small-card-img-top {
-  height: 200px;
-  width: 250px;
+  height: 18dvh;
+  width: 18dvh;
   border-radius: 4px;
   border: black;
+  margin-right: 5px;
 }
 
 .show-facility-basic-info {
   border-radius: 4px;
-  border: black;
-  text-align: justify center;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 5px;
 }
 
 .show-small-card-reviews {
   border-radius: 4px;
-  border: black;
+  border: 1px solid black;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .reviews {

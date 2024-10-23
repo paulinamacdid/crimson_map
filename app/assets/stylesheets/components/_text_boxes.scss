@@ -1,10 +1,11 @@
 .title {
-  font: $headers-font;
+  font-family: $headers-font;
   color: black;
+  font-size: 16pt;
 }
 
 .paragraph {
-  font: $body-font;
+  font-family: $body-font;
   color: black;
+  font-size: 10pt;
 }
-
