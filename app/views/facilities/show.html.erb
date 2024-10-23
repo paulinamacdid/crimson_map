@@ -21,39 +21,46 @@
       <div class="facility-background-card">
         <div class="paragraph facility-white-card">
           <div class="facility-info-small-card">
-            <div class="d-flex justify-content-between">
-            <div>
-              <% if @facility.photo.attached? %>
-                url( '<%= cl_image_path @facility.photo.key, class: "small-card-img-top" %>' )
-              <% else %>
-                url( '<%= image_tag @facility.image, class: "show-small-card-img-top" %>' )
-              <% end %>
+
+            <div class="d-flex justify-content-start">
+
+              <div>
+                <% if @facility.photo.attached? %>
+                  url( '<%= cl_image_path @facility.photo.key, class: "show-small-card-img-top" %>' )
+                <% else %>
+                  <%= image_tag @facility.image, class: "show-small-card-img-top" %>
+                <% end %>
+              </div>
+
+              <div class="show-facility-basic-info">
+                <h1 class="title"><%= @facility.name %></h1>
+                <h3>
+                  <div class="stars" style="--rating<d: <%= @average %>;" aria-label="Rating of this product is <%= @average %> out of 5."></div>
+                </h3>
+                <h3 class="paragraph"><%= @facility.address %></h3>
+                <div>
+                <% if @facility.toilet %>
+                  <i class="fa-solid fa-toilet toilet large_icon"></i>
+                <% end %>
+                <% if @facility.sanitary_products %>
+                  <i class="fa-solid fa-person-dress sanitary-products large_icon"></i>
+                <% end %>
+                <% if @facility.baby_change %>
+                  <i class="fa-solid fa-baby baby-change large_icon"></i>
+                <% end %>
+                <% if @facility.quiet_place %>
+                  <i class="fa-solid fa-volume-xmark quiet large_icon"></i>
+                <% end %>
+                <% if @facility.education %>
+                  <i class="fa-solid fa-book education large-icon"></i>
+                <% end %>
+              </div>
+              </div>
             </div>
-            <div class="facility-basic-info">
-            <h1><%= @facility.name %></h1>
-            <h3>
-              <div class="stars" style="--rating<d: <%= @average %>;" aria-label="Rating of this product is <%= @average %> out of 5."></div>
-            </h3>
-            <h3><%= @facility.address %></h3>
-            <% if @facility.toilet %>
-              <i class="fa-solid fa-toilet toilet large_icon"></i>
-            <% end %>
-            <% if @facility.sanitary_products %>
-              <i class="fa-solid fa-person-dress sanitary-products large_icon"></i>
-            <% end %>
-            <% if @facility.baby_change %>
-              <i class="fa-solid fa-baby baby-change large_icon"></i>
-            <% end %>
-            <% if @facility.quiet_place %>
-              <i class="fa-solid fa-volume-xmark quiet large_icon"></i>
-            <% end %>
-            <% if @facility.education %>
-              <i class="fa-solid fa-book education large-icon"></i>
-            <% end %>
-            </div>
-            </div>
-            <div class="small-card-reviews">
+
+            <div class="show-small-card-reviews">
               <h2 class="title">Reviews:</h2>
+              <div class=  "d-flex justify-content-start">
               <% if @facility.reviews.empty? %>
               <p> currently no reviews... leave one here </p>
                 <% else %>
@@ -62,9 +69,9 @@
                   <p class="paragraph text-wrap" style="width: 30rem;"><%= @facility.reviews.last.comment %></p>
                 <%# <% end %>
               <% end %>
-            </div>
-
+              </div>
             <%= link_to "leave a review", new_facility_review_path(@facility), class: "button show-btn" %>
+            </div>
           </div>
         </div>
       </div>
