@@ -27,7 +27,7 @@
               <% if @facility.photo.attached? %>
                 url( '<%= cl_image_path @facility.photo.key, class: "small-card-img-top" %>' )
               <% else %>
-                url( '<%= image_tag @facility.image, class: "small-card-img-top" %>' )
+                url( '<%= image_tag @facility.image, class: "show-small-card-img-top" %>' )
               <% end %>
                 ;">
             </div>
