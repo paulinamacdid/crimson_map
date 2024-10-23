@@ -9,9 +9,8 @@
 #   end
 require "json"
 require "open-uri"
-require 'dotenv'
 
-Dotenv.load
+
 puts "cleaning the database first..."
 
 Review.destroy_all
@@ -30,7 +29,7 @@ melissa = User.create(email: "mel123@gmail.com", password: "123456", first_name:
 puts "creating facilities..."
 oru = Facility.create!(address: "7 Throwley Way, Sutton SM1 4AF",
                       business_owner: false,
-                      rating: 4,
+                      rating: 4.0,
                       toilet: true,
                       sanitary_products: true,
                       baby_change: true,
@@ -41,7 +40,7 @@ oru = Facility.create!(address: "7 Throwley Way, Sutton SM1 4AF",
                       image: "https://images.squarespace-cdn.com/content/v1/63d2989b2d4c0421d7d241d5/e002a445-b5a6-46a9-bd85-8c5e1033ded2/SRG_Oru_SUTTON_CROWDFUNDER_ORIGINAL-22.jpg")
 sutton_library = Facility.create!(address: "St Nicholas Way, Sutton SM1 1EA",
                                   business_owner: false,
-                                  rating: 4,
+                                  rating: 4.0,
                                   toilet: true,
                                   sanitary_products: true,
                                   baby_change: true,
@@ -75,7 +74,7 @@ carshalton_station = Facility.create!(address: "Carshalton SM5 2HW",
 british_library = Facility.create!(address: "96 Euston Rd., London NW1 2DB",
   business_owner: true,
   rating: 4.5,
-  toilet: 3,
+  toilet: true,
   sanitary_products: false,
   baby_change: true,
   quiet_place: true,
@@ -197,4 +196,3 @@ puts places
 # places["places"].each do |place|
 #   Facility.create!(name: place["places"], address:, opening_hours:, toilet: )
 # # end
-

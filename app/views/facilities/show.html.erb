@@ -1,35 +1,35 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Info</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Directions</button>
-  </li>
-</ul>
-
-<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-            <% if @facility.photo.attached? %>
-              url( '<%= cl_image_path @facility.photo.key, height: 300, width: 400, crop: :fill %>' )
-            <% else %>
-              url( '<%= @facility.image %>' )
-            <% end %>
-              ;">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Info</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Directions</button>
+    </li>
+  </ul>
 </div>
-<div>
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
+<div class="container">
     <div class="map-opaque"
       data-controller="map"
       data-map-markers-value="<%= @marker.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map'>
     </div>
 
-    <%# <div> %>
       <div class="facility-background-card">
         <div class="paragraph facility-white-card">
           <div class="facility-info-small-card">
+            <div class="d-flex justify-content-between">
+            <div>
+              <% if @facility.photo.attached? %>
+                url( '<%= cl_image_path @facility.photo.key, class: "small-card-img-top" %>' )
+              <% else %>
+                url( '<%= image_tag @facility.image, class: "show-small-card-img-top" %>' )
+              <% end %>
+            </div>
+            <div class="facility-basic-info">
             <h1><%= @facility.name %></h1>
             <h3>
               <div class="stars" style="--rating<d: <%= @average %>;" aria-label="Rating of this product is <%= @average %> out of 5."></div>
@@ -50,9 +50,10 @@
             <% if @facility.education %>
               <i class="fa-solid fa-book education large-icon"></i>
             <% end %>
-
-            <div class="d-flex justify-content-evenly">
-              <h2 class="title mt-3">Reviews:</h2>
+            </div>
+            </div>
+            <div class="small-card-reviews">
+              <h2 class="title">Reviews:</h2>
               <% if @facility.reviews.empty? %>
               <p> currently no reviews... leave one here </p>
                 <% else %>
@@ -68,7 +69,7 @@
         </div>
       </div>
     </div>
-  <%# </div> %>
+</div>
 
   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
     <div data-controller="map-large"
