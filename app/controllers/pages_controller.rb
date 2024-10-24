@@ -2,7 +2,12 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    if current_user.current_lat.present?
+      @facilities = Facility.near([current_user.current_lat, current_user.current_long], 10)
+    else
     @facilities = Facility.all
+    end
+    @facilities.order(rating: :desc)
     @markers = @facilities.geocoded.map do |facility|
       {
         lat: facility.latitude,
