@@ -23,7 +23,7 @@ export default class extends Controller {
       container: "map-large", // this.element,
       style: "mapbox://styles/dorothea87/cm2c313mb009601pggw8k4fo2",
     });
-    // this.#addMarkersToMap();
+    this.#addMarkersToMap();
     // this.#fitMapToMarkers();
     // this.#filterButton();
     // this.#addFilter();
@@ -100,37 +100,37 @@ export default class extends Controller {
         }
         // add turn instructions here at the end
 
-        // this.map.on('load', () => {
-        //   // make an initial directions request that
-        //   // starts and ends at the same location
-        //   this.getRoute(start);
+        this.map.on("load", () => {
+          // make an initial directions request that
+          // starts and ends at the same location
+          this.getRoute(start);
 
-        //   // Add starting point to the map
-        //   this.map.addLayer({
-        //     id: 'point',
-        //     type: 'circle',
-        //     source: {
-        //       type: 'geojson',
-        //       data: {
-        //         type: 'FeatureCollection',
-        //         features: [
-        //           {
-        //             type: 'Feature',
-        //             properties: {},
-        //             geometry: {
-        //               type: 'Point',
-        //               coordinates: start
-        //             }
-        //           }
-        //         ]
-        //       }
-        //     },
-        //     paint: {
-        //       'circle-radius': 10,
-        //       'circle-color': '#3887be'
-        //     }
-        //   });
-        // });
+          // Add starting point to the map
+          this.map.addLayer({
+            id: "point",
+            type: "circle",
+            source: {
+              type: "geojson",
+              data: {
+                type: "FeatureCollection",
+                features: [
+                  {
+                    type: "Feature",
+                    properties: {},
+                    geometry: {
+                      type: "Point",
+                      coordinates: start,
+                    },
+                  },
+                ],
+              },
+            },
+            paint: {
+              "circle-radius": 10,
+              "circle-color": "#3887be",
+            },
+          });
+        });
         // reshaping map to fit the bounds of the route
         this.map.fitBounds(
           [
@@ -144,25 +144,25 @@ export default class extends Controller {
       });
   }
 
-  // #addMarkersToMap() {
-  //   this.markersValue.forEach((marker) => {
-  //     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
 
-  //     const customMarker = document.createElement("div");
-  //     customMarker.innerHTML = marker.marker_html;
+      const customMarker = document.createElement("div");
+      customMarker.innerHTML = marker.marker_html;
 
-  //     new mapboxgl.Marker(customMarker)
-  //       .setLngLat([marker.lng, marker.lat])
-  //       .setPopup(popup)
-  //       .addTo(this.map);
-  //   });
-  // }
+      new mapboxgl.Marker(customMarker)
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(this.map);
+    });
+  }
 
-  // #fitMapToMarkers() {
-  //   const bounds = new mapboxgl.LngLatBounds();
-  //   this.markersValue.forEach((marker) =>
-  //     bounds.extend([marker.lng, marker.lat])
-  //   );
-  //   this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-  // }
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds();
+    this.markersValue.forEach((marker) =>
+      bounds.extend([marker.lng, marker.lat])
+    );
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  }
 }
