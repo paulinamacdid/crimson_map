@@ -1,46 +1,48 @@
 <h1 class="mt-3" style="text-align: center">All your favourites</h1>
-<div class="mt-5" style="border: solid 4px black; width: 400px; height: 400px; margin: 20px auto">
-  <div class="card-container mt-3">
-    <% @favourites.each do |favourite| %>
-      <div class="d-flex">
-        <div class="facility-background-card">
-          <div class="paragraph facility-white-card">
-            <h3><%= favourite.facility.name %></h3>
-            <h4>
-              <% reviews = favourite.facility.reviews %>
-                <% if !reviews.empty? %>
-                  <% ratings = reviews.map{|review| review.rating} %>
-                  <% average = (ratings.sum / ratings.count).floor(1) %>
-                <% end %>
-              <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
-            </h4>
-            <h3 class="text-wrap" style="width: 18rem;"><%= favourite.facility.address %></h3>
-              <div class="card-bottom">
-                <div class="card-icons">
-                  <% if favourite.facility.toilet %>
-                    <i class="fa-solid fa-toilet toilet"></i>
-                  <% end %>
-                  <% if favourite.facility.sanitary_products %>
-                    <i class="fa-solid fa-person-dress sanitary-products"></i>
-                  <% end %>
-                  <% if favourite.facility.baby_change %>
-                    <i class="fa-solid fa-baby baby-change"></i>
-                  <% end %>
-                  <% if favourite.facility.quiet_place %>
-                    <i class="fa-solid fa-volume-xmark quiet"></i>
-                  <% end %>
-                  <% if favourite.facility.education %>
-                    <i class="fa-solid fa-book education"></i>
-                  <% end %>
-                </div>
-                <div class="card-button">
-                  <%= link_to "Details", facility_path(favourite.facility), class: "button" %>
-                </div>
-            </div>
-          </div>
-        </div>
+<div class="mt-5" style="border: solid 4px black; width: 90dvw; height: 80dvh; margin: 20px auto; overflow-y:scroll;">
+  <div class="card-container-favourites mt-3">
 
-        </div>
-    <% end %>
+
+        <% @favourites.each do |favourite| %>
+          <%# <div class="d-flex"> %>
+            <div class="favourite-background-card">
+
+                  <div class="paragraph facility-white-card">
+                    <h3><%= favourite.facility.name %></h3>
+                    <h4>
+                      <% reviews = favourite.facility.reviews %>
+                        <% if !reviews.empty? %>
+                          <% ratings = reviews.map{|review| review.rating} %>
+                          <% average = (ratings.sum / ratings.count).floor(1) %>
+                        <% end %>
+                      <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
+                    </h4>
+                    <h3 class="text-wrap" style="width: 18rem;"><%= favourite.facility.address %></h3>
+                      <div class="card-bottom">
+                          <div class="card-icons">
+                            <% if favourite.facility.toilet %>
+                              <i class="fa-solid fa-toilet toilet"></i>
+                            <% end %>
+                            <% if favourite.facility.sanitary_products %>
+                              <i class="fa-solid fa-person-dress sanitary-products"></i>
+                            <% end %>
+                            <% if favourite.facility.baby_change %>
+                              <i class="fa-solid fa-baby baby-change"></i>
+                            <% end %>
+                            <% if favourite.facility.quiet_place %>
+                              <i class="fa-solid fa-volume-xmark quiet"></i>
+                            <% end %>
+                            <% if favourite.facility.education %>
+                              <i class="fa-solid fa-book education"></i>
+                            <% end %>
+                          </div>
+                          <div class="card-button">
+                            <%= link_to "Details", facility_path(favourite.facility), class: "button" %>
+                          </div>
+                        </div>
+                    </div>
+            </div>
+        <% end %>
+
   </div>
 </div>
