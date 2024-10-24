@@ -24,16 +24,16 @@
                 <% end %>
               <% end %>
             </div>
-            <h3><%= facility.name %></h3>
-            <h4>
+            <h4><%= facility.name %></h4>
+            <h5>
               <% reviews = facility.reviews %>
                 <% if !reviews.empty? %>
                   <% ratings = reviews.map{|review| review.rating} %>
                   <% average = (ratings.sum / ratings.count).floor(1) %>
                 <% end %>
               <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
-            </h4>
-            <h3 class="text-wrap" style="width: 18rem;"><%= facility.address %></h3>
+            </h5>
+            <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
               <div class="card-bottom">
                 <div class="card-icons">
                   <% if facility.toilet %>
