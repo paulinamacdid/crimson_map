@@ -23,8 +23,8 @@ export default class extends Controller {
       container: "map-large", // this.element,
       style: "mapbox://styles/dorothea87/cm2c313mb009601pggw8k4fo2",
     });
-    this.#addMarkersToMap();
-    this.#fitMapToMarkers();
+    // this.#addMarkersToMap();
+    // this.#fitMapToMarkers();
     // this.#filterButton();
     // this.#addFilter();
     // this.#removeFilter();
@@ -43,11 +43,6 @@ export default class extends Controller {
       showUserHeading: true,
     });
     this.map.addControl(geoLocate);
-  }
-
-  // triggered with click data-action on show page attached to the navigate to here button
-  navigateRoute() {
-    console.log("clicked!");
 
     navigator.geolocation.getCurrentPosition(
       this.success.bind(this),
@@ -149,25 +144,25 @@ export default class extends Controller {
       });
   }
 
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
+  // #addMarkersToMap() {
+  //   this.markersValue.forEach((marker) => {
+  //     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html);
 
-      const customMarker = document.createElement("div");
-      customMarker.innerHTML = marker.marker_html;
+  //     const customMarker = document.createElement("div");
+  //     customMarker.innerHTML = marker.marker_html;
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(this.map);
-    });
-  }
+  //     new mapboxgl.Marker(customMarker)
+  //       .setLngLat([marker.lng, marker.lat])
+  //       .setPopup(popup)
+  //       .addTo(this.map);
+  //   });
+  // }
 
-  #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds();
-    this.markersValue.forEach((marker) =>
-      bounds.extend([marker.lng, marker.lat])
-    );
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
-  }
+  // #fitMapToMarkers() {
+  //   const bounds = new mapboxgl.LngLatBounds();
+  //   this.markersValue.forEach((marker) =>
+  //     bounds.extend([marker.lng, marker.lat])
+  //   );
+  //   this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+  // }
 }
