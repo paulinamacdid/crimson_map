@@ -1,11 +1,10 @@
 <div
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  <i data-action="click->map#filterButton", class="fa-solid fa-grip-lines filter-btn"></i>
-
-  <div id='map' class="map-large">
-  </div>
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="geocoder" data-map-target="geocoder"></div>
+    <div id="map" class="map-large"></div>
+</div>
 
   <div data-map-target="filtersForm", class="d-none">
 
