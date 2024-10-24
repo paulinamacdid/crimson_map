@@ -54,9 +54,9 @@
           </div>
             <div class="show-small-card-reviews">
               <h2 class="title">Reviews:</h2>
-              <div class=  "d-flex justify-content-start">
+
               <% if @facility.reviews.empty? %>
-              <p stlye="text-align: center"> currently no reviews... leave one here </p>
+              <p class="no-reviews"> currently no reviews... leave one here </p>
                 <% else %>
                 <%# <% @facility.reviews.each do |review| %>
                   <p class="paragraph text-wrap" style="width: 30rem;"><%= @facility.reviews.last.comment %></p>
