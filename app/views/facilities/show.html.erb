@@ -21,13 +21,11 @@
         <div class="paragraph show-facility-white-card">
           <div class="show-facility-info-small-card">
             <div class="d-flex justify-content-start">
-              <div>
                 <% if @facility.photo.attached? %>
                   url( '<%= cl_image_path @facility.photo.key, class: "show-small-card-img-top" %>' )
                 <% else %>
                   <%= image_tag @facility.image, class: "show-small-card-img-top" %>
                 <% end %>
-              </div>
               <div class="show-facility-basic-info">
                 <h1 class="title"><%= @facility.name %></h1>
                 <h3>
