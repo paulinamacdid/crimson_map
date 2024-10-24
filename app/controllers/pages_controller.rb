@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  # skip_before_action :authenticate_user!, only: [:home]
 
   def home
     if current_user.current_lat.present?
-      @facilities = Facility.near([current_user.current_lat, current_user.current_long], 10)
+      @facilities = Facility.near([current_user.current_lat, current_user.current_long], 14)
     else
     @facilities = Facility.all
     end
