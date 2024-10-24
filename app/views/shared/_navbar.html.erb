@@ -2,7 +2,7 @@
   <div>
     <% if user_signed_in? %>
       <div class="nav-item dropup">
-  <i class="fa-regular fa-user" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+  <i class="fa-solid fa-gear" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
       <%= link_to "My Profile", my_profile_path, class: "dropdown-item" %>
       <%= link_to "Add a facility", new_facility_path, class: "dropdown-item" %>
