@@ -59,7 +59,6 @@ class FacilitiesController < ApplicationController
     params[:facility][:baby_change] == "1" ? params[:facility][:baby_change] = true : params[:facility][:baby_change] = false
     params[:facility][:quiet_place] == "1" ? params[:facility][:quiet_place] = true : params[:facility][:quiet_place] = false
     params[:facility][:education] == "1" ? params[:facility][:education] = true : params[:facility][:education] = false
-    raise
     @facility = Facility.new(facility_params)
     @facility.user = current_user
     if  @facility.save
