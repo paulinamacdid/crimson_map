@@ -87,7 +87,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_23_141208) do
     t.bigint "user_id", null: false
     t.bigint "facility_id", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at", null: false<% @review.each do |review| %>
     t.index ["facility_id"], name: "index_reviews_on_facility_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
