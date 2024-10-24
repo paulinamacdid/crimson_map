@@ -4,25 +4,34 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   <i data-action="click->map#filterButton", class="fa-solid fa-grip-lines filter-btn"></i>
 
-  <div id='map' class="map-large">
+  <div id='map' class="map-large position-relative">
+    <div data-map-target="filtersForm", class="d-none position-absolute z-3 top-0 right-0 title">
+      <%= form_with url: facilities_path, method: :get, class: 'filter-form' do %>
+        <div>
+        <%= label_tag 'Toilet'%>
+        <%= check_box_tag 'query', "toilet" %>
+        </div>
+        <div>
+        <%= label_tag 'Quiet Place' %>
+        <%= check_box_tag 'query', "quiet_place" %>
+        </div>
+        <div>
+        <%= label_tag 'Sanitary Products' %>
+        <%= check_box_tag 'query', "sanitary_products" %>
+        </div>
+        <div>
+        <%= label_tag 'Baby Change' %>
+        <%= check_box_tag 'query', "baby_change"%>
+        </div>
+        <div>
+        <%= label_tag 'Education' %>
+        <%= check_box_tag 'query', "education" %>
+        </div>
+        <%= submit_tag "Filter", class: "button", style: "margin: 10px;" %>
+      <% end %>
+    </div>
   </div>
 
-  <div data-map-target="filtersForm", class="d-none filter-">
-
-    <%= form_with url: facilities_path, method: :get do %>
-      <%= label_tag 'Toilet' %>
-      <%= check_box_tag 'query', "toilet" %>
-      <%= label_tag 'Quiet Place' %>
-      <%= check_box_tag 'query', "quiet_place" %>
-      <%= label_tag 'Sanitary Products' %>
-      <%= check_box_tag 'query', "sanitary_products" %>
-      <%= label_tag 'Baby Change' %>
-      <%= check_box_tag 'query', "baby_change" %>
-      <%= label_tag 'Education' %>
-      <%= check_box_tag 'query', "education" %>
-      <%= submit_tag "Submit", class: "button", style: "margin-bottom: 10px;" %>
-    <% end %>
-  </div>
 </div>
 
 <script>
