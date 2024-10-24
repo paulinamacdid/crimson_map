@@ -6,4 +6,4 @@
     <% average = (ratings.sum / ratings.count).floor(1) %>
   <% end %>
 <div class="stars-index" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
-<%= link_to "Details", facility_path(facility), class: "button", style: "margin-top: px;" %>
+<%= link_to "Details", facility_path(facility), class: "button" %>
