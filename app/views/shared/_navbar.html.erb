@@ -1,10 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-around fixed-bottom">
-  <div>
     <% if user_signed_in? %>
-    <div>
-      <%= link_to raw('<i class="fa-solid fa-gear"></i>'), my_profile_path, class: "navbar-brand" %>
-     </div>
-  </div>
   <div>
   <%= link_to raw('<i class="fa-solid fa-map"></i>'), facilities_path, class: "navbar-brand" %>
 </div>
