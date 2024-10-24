@@ -37,5 +37,4 @@ class PagesController < ApplicationController
     @review = Review.where(user: current_user)
     @facility = Facility.where(user: current_user)
   end
-
 end
