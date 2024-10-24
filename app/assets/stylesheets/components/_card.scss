@@ -88,3 +88,16 @@
 .reviews {
   text-align: left;
 }
+
+
+// FAVOURITES
+
+
+.favourite-background-card {
+  border: solid 4px $black;
+  background-color: $green;
+  border-radius: 2px;
+  margin: 5px;
+  width: 80dvw;
+  margin: 8px auto;
+}
