@@ -1,0 +1,65 @@
+.fa-star {
+  color: #f8bc5c;
+  font-size: 20px;
+}
+
+.toilet {
+  color: $yellow;
+  font-size: 20px;
+  margin-top: 10px;
+  &.large_icon {
+    font-size: 30px;
+  }
+}
+
+.quiet {
+  color: $turquoise;
+  font-size: 20px;
+  margin-top: 10px;
+  &.large_icon {
+    font-size: 30px;
+  }
+}
+
+.education {
+  color: $orange;
+  font-size: 20px;
+  margin-top: 10px;
+  &.large_icon {
+    font-size: 30px;
+  }
+}
+
+.baby-change {
+  color: $blue;
+  font-size: 20px;
+  margin-top: 10px;
+  &.large_icon {
+    font-size: 30px;
+  }
+}
+
+.sanitary-products {
+  color: $red;
+  font-size: 20px;
+  margin-top: 10px;
+  &.large_icon {
+    font-size: 30px;
+  }
+}
+
+.heart {
+  font-size: 30px;
+  color: $turquoise;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.colour-heart {
+  font-size: 30px;
+  color: $turquoise;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
