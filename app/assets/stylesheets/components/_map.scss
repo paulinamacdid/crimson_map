@@ -13,7 +13,7 @@
 }
 
 .mapboxgl-ctrl-geocoder--input {
-  width: 350px;
+  width: 320px;
   border: 4px solid $black;
   height: 60px;
   background-color: #eeeeee;
@@ -68,6 +68,5 @@
 }
 
 .mapboxgl-canvas {
-  width: 1000px;
-  height: 500px;
+  object-fit: cover;
 }
