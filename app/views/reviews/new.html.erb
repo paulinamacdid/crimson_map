@@ -1,13 +1,19 @@
-<div class="container my-3">
+<div class="container my-3" style="margin-top: 100px;">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-4 border">
-        <h3>Been to <%= @facility.name %>? Write a review...</h3>
       <div class="form-border-container">
+        <h3 style="margin: 5px 20px; text-align: left; max-width: 90%; font-size: 30px; padding-bottom: 50px;">Been to <%= @facility.name %>? Write a review...</h3>
         <%= simple_form_for [@facility, @review] do |f| %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { data: { controller: "star-rating" } }, style: "margin: 5px 20px; text-align: center;" %>
-          <%= f.input :comment, label: false, placeholder: "comment here...", style: "margin: 10px; text-align: center;" %>
-          <%= f.submit "Submit review", class: "button", style: "margin-bottom: 10px; text-align: center;" %>
-        <% end %>
+          <div  style="margin: 5px 20px; text-align: center; font-size: 30px;">
+            <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience...", input_html: { data: { controller: "star-rating" } } %>
+          </div>
+          <div  class="input-field-form" style="margin: 5px 20px; text-align: left; max-width: 90%">
+          <%= f.input :comment, label: false, placeholder: "comment here..." %>
+          </div>
+          <div  style="margin: 5px 20px;">
+          <%= f.submit "Submit review", class: "button" %>
+          </div>
+          <% end %>
       </div>
     </div>
   </div>
