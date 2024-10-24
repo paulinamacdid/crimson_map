@@ -1,4 +1,4 @@
-<div class="container my-3">
+<div class="container borderless my-3">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-6 border">
       <h1>Add a new facility here:</h1>
@@ -17,9 +17,11 @@
           <%= f.label :education, "Is this facility a place of learning (e.g. offers workshops, courses, a museum)?" %>
           <%= f.check_box :education, as: :boolean %>
           <%= f.input :photo, as: :file %>
+          <div class="d-flex justify-content-between">
           <%= f.submit class: "button" %>
         <% end %>
-      <%= link_to 'back', facilities_path, class: "button" %>
+      <%= link_to 'Back', facilities_path, class: "button" %>
+      </div>
     </div>
   </div>
 </div>
