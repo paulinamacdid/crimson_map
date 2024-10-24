@@ -24,32 +24,32 @@
                 <% end %>
               <% end %>
             </div>
-            <h4><%= facility.name %></h4>
-            <h5>
+            <h2><%= facility.name %></h2>
+            <h2>
               <% reviews = facility.reviews %>
                 <% if !reviews.empty? %>
                   <% ratings = reviews.map{|review| review.rating} %>
                   <% average = (ratings.sum / ratings.count).floor(1) %>
                 <% end %>
               <div class="stars" style="--rating: <%= average %>;" aria-label="Rating of this product is <%= average %> out of 5."></div>
-            </h5>
-            <h4 class="text-wrap" style="width: 18rem;"><%= facility.address %></h4>
+            </h2>
+            <h4><%= facility.address %></h4>
               <div class="card-bottom">
                 <div class="card-icons">
                   <% if facility.toilet %>
-                    <i class="fa-solid fa-toilet toilet large_icon"></i>
+                    <i class="fa-solid fa-toilet toilet large_icon" style="font-size: 24px; margin-bottom: 10px;"></i>
                   <% end %>
                   <% if facility.sanitary_products %>
-                    <i class="fa-solid fa-person-dress sanitary-products large_icon"></i>
+                    <i class="fa-solid fa-person-dress sanitary-products large_icon style="font-size: 24px; margin-bottom: 10px;"></i>
                   <% end %>
                   <% if facility.baby_change %>
-                    <i class="fa-solid fa-baby baby-change large_icon"></i>
+                    <i class="fa-solid fa-baby baby-change large_icon style="font-size: 24px; margin-bottom: 10px;"></i>
                   <% end %>
                   <% if facility.quiet_place %>
-                    <i class="fa-solid fa-volume-xmark quiet large_icon"></i>
+                    <i class="fa-solid fa-volume-xmark quiet large_icon style="font-size: 24px; margin-bottom: 10px;"></i>
                   <% end %>
                   <% if facility.education %>
-                    <i class="fa-solid fa-book education large_icon"></i>
+                    <i class="fa-solid fa-book education large_icon style="font-size: 24px; margin-bottom: 10px;"></i>
                   <% end %>
                 </div>
                 <div class="card-button">
