@@ -28,7 +28,7 @@ melissa = User.create(email: "mel123@gmail.com", password: "123456", first_name:
 abi = User.create(email: "abi123@gmail.com", password: "123456", first_name: "Abi", last_name: "Blenson", age: 46)
 
 puts "creating facilities..."
-oru = Facility.create!(address: "7 Throwley Way, Sutton SM1 4AF",
+oru = Facility.create!(address: "6 Virginia Close, KT3 3RB New Malden",
                       business_owner: false,
                       rating: 4.0,
                       toilet: true,
@@ -52,7 +52,7 @@ sutton_library = Facility.create!(address: "St Nicholas Way, Sutton SM1 1EA",
                                   opening_hours: "Open 09:00 - 17:00",
                                   user: melissa,
                                   image: "https://thedesignconcept.co.uk/media/24274/sutton_uk_006.jpg?mode=pad&width=1350&height=900&bgcolor=ffffff&rnd=131835698170000000")
-dobbies = Facility.create!(address: "4a Woodmansterne Ln, Wallington SM6 0SU",
+dobbies = Facility.create!(address: "28 Willow Rd, New Malden KT3 3RS",
                           business_owner: true,
                           rating: 4,
                           toilet: true,
@@ -88,7 +88,7 @@ british_library = Facility.create!(address: "96 Euston Rd., London NW1 2DB",
   opening_hours: "Open 09:30 - 20:00",
   user: melissa,
   image: "https://wp.inews.co.uk/wp-content/uploads/2017/10/shutterstock_554370322-e1507803540641.jpg")
-pret = Facility.create!(address: "84 High St, Sutton SM1 1EX",
+pret = Facility.create!(address: "Kingston Rd, New Malden KT3 3RX",
   business_owner: true,
   rating: 1,
   toilet: true,
@@ -100,7 +100,7 @@ pret = Facility.create!(address: "84 High St, Sutton SM1 1EX",
   user: ivy,
   opening_hours: "Open 07:30 - 19:00",
   image: "https://www.londondesigneroutlet.com/wp-content/uploads/2023/06/pret-a-manger-london-designer-outlet-00.jpg",)
-bella_caffe = Facility.create!(address: "3 Westmead Cor, Sutton, Carshalton SM5 2NZ",
+bella_caffe = Facility.create!(address: "150 Kingston Rd, New Malden KT3 3RD",
   business_owner: false,
   rating: 2,
   toilet: true,
