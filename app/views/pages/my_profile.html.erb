@@ -25,4 +25,29 @@
     </div>
   </div>
 
+
+<%# trying to create flexbox that allows you to scroll from left to right with reviews %>
+    <h2 class="title mt-3">My reviews:</h2>
+      <div class="card-container my-1">
+        <div class="d-flex">
+          <div class="facility-background-card">
+            <div class="paragraph facility-white-card">
+              <% if @review.length > 0 %>
+                  <% @review.each do |review| %>
+                    <h4><%= review.comment %></h4>
+                    <h4><%= review.rating %></h4>
+                    <%= link_to review_path(review), class: "card-category-icon", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                      <i class="fa-solid fa-x"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
 </div>
