@@ -1,8 +1,12 @@
-<h1>Blog Posts</h1>
+<div class="container">
+  <h1 class="title">Blog Posts</h1>
 
-<% @blogs.each do |blog| %>
-<h2><%= blog.title %></h2>
-<p><%= blog.content %></p>
-<h3><%= blog.author %></h3>
-<h3>Find out more<%= blog.url %></h3>
-<% end %>
+  <% @blogs.each do |blog| %>
+  <div>
+  <h2><%= blog.title %></h2>
+  <p class="blog-image"><%= blog.image %></p>
+  <p><%= blog.content_preview %></p>
+  <h3><%= blog.author %></h3>
+  <h3>Find out more<%= blog.url %></h3>
+  <% end %>
+</div>

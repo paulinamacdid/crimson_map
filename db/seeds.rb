@@ -188,7 +188,10 @@ Review.create!(comment: "a surprisingly gorgeous spot to change sanitary product
 
 puts "creating blogs..."
 
-Blog.create!(title: "Endometriosis at Work", content: "One in six people with endometriosis have to leave the workplace and is a condition that costs the economy £8.2 billion per year in loss of work and healthcare costs.
+Blog.create!(title: "Endometriosis at Work", content_preview: "One in six people with endometriosis have to leave the workplace and is a condition that costs the economy £8.2 billion per year in loss of work and healthcare costs.
+                      This is unacceptable- nobody should face discrimination at work or risk losing their job because of their endometriosis, and we’re determined to work with the Government to ensure they protect those with menstrual health conditions in the new Bill.
+                      Earlier this month, the Government introduced an Employment Rights Bill that aims to cut down on unfair working practices. Endometriosis UK welcomes the Bill, including measures to support those going through the menopause. But the Bill must go further to ensure measures are introduced to ensure those with endometriosis have the support and protections they need in the workplace.
+                      Over the coming weeks and months...", content: "One in six people with endometriosis have to leave the workplace and is a condition that costs the economy £8.2 billion per year in loss of work and healthcare costs.
                       This is unacceptable- nobody should face discrimination at work or risk losing their job because of their endometriosis, and we’re determined to work with the Government to ensure they protect those with menstrual health conditions in the new Bill.
                       Earlier this month, the Government introduced an Employment Rights Bill that aims to cut down on unfair working practices. Endometriosis UK welcomes the Bill, including measures to support those going through the menopause. But the Bill must go further to ensure measures are introduced to ensure those with endometriosis have the support and protections they need in the workplace.
                       Over the coming weeks and months, Endometriosis UK will be lobbying for changes to the Employment Rights Bill to ensure all those with menstrual health conditions, including endometriosis, have access to the support they need at work. We would like to see:
@@ -196,7 +199,7 @@ Blog.create!(title: "Endometriosis at Work", content: "One in six people with en
                       Legislation to ensure workers with menstrual health conditions are treated fairly if they need short but intermittent time off work, as a result of their condition.
                       The Bill is due to receive its second reading in the House of Commons this afternoon (Monday 21st October 2024).
                       You can support the campaign by emailing your MP. Our easy-to-use template will generate an email to your MP using your postcode.",
-                      author: "Sally Campbell", url: "https://www.endometriosis-uk.org/new-campaign-endometriosis-work")
+                      author: "Sally Campbell", image: "https://www.endometriosis-uk.org/sites/default/files/2024-08/Endometriosis%20UK%20%282%29.png", url: "https://www.endometriosis-uk.org/new-campaign-endometriosis-work")
 
 puts "done, created #{Blog.count} blog"
 
