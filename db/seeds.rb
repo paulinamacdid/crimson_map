@@ -164,7 +164,7 @@ pulse_health_and_fitness = Facility.create!(address: "Nightingale Rd, Carshalton
   user: ivy,
   image: "https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/10/Pulse-Carshalton-193-scaled.jpg",
 )
-sheenas_free_little_library = Facility.create!(address: "49 St James Rd, Carshalton SM5 2DT",
+sheenas_free_little_library = Facility.create!(address: "51 Windsor Ave, New Malden KT3 5HE",
   business_owner: false,
   rating: 3.5,
   toilet: true,
