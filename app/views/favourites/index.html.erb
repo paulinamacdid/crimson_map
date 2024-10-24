@@ -1,4 +1,4 @@
-<h1 class="mt-3" style="text-align: center">All your favourites:</h1>
+<h1 class="mt-3" style="text-align: center">All your favourites</h1>
 <div class="mt-5" style="border: solid 4px black; width: 400px; height: 400px; margin: 20px auto">
   <div class="card-container mt-3">
     <% @favourites.each do |favourite| %>
@@ -34,7 +34,7 @@
                   <% end %>
                 </div>
                 <div class="card-button">
-                  <%= link_to "Details", "#", class: "button" %>
+                  <%= link_to "Details", facility_path(favourite.facility), class: "button" %>
                 </div>
             </div>
           </div>

@@ -83,6 +83,7 @@
         data-map-large-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
         data-map-url-value='<%= facilities_url %>'>
       <button data-action="click->map-large#navigateRoute">Navigate to here!</button>
+      <div id="geocoder" data-map-target="geocoder"></div>
       <div class="map-large" id= "map-large">
         <%# button with data action which triggers navigateRoute function %>
       </div>

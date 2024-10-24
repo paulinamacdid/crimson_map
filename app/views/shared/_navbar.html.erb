@@ -1,14 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-around fixed-bottom">
   <div>
     <% if user_signed_in? %>
-      <div class="nav-item dropup">
-  <i class="fa-solid fa-gear" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "My Profile", my_profile_path, class: "dropdown-item" %>
-      <%= link_to "Add a facility", new_facility_path, class: "dropdown-item" %>
-      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-    </div>
-</div>
+    <div>
+      <%= link_to raw('<i class="fa-solid fa-gear"></i>'), my_profile_path, class: "navbar-brand" %>
+     </div>
   </div>
   <div>
   <%= link_to raw('<i class="fa-solid fa-map"></i>'), facilities_path, class: "navbar-brand" %>
