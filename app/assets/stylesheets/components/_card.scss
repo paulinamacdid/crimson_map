@@ -11,9 +11,9 @@
   background-color: $white;
   border-radius: 2px;
   color: black;
-  font-size: 9px;
+  font-size: 12px;
   margin: 20px;
-  padding: 10px;
+  padding: 20px;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -41,6 +41,7 @@
 
 //SHOW PAGE CARD
 
+
 .show-facility-background-card {
   border: solid 3px $black;
   background-color: $green;
@@ -64,7 +65,7 @@
   border-radius: 4px;
   border: black;
   margin-right: 5px;
-  object-fit: cover;
+  object-fit: fit;
 }
 
 .show-facility-basic-info {
