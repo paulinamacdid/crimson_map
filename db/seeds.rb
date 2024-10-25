@@ -219,20 +219,6 @@ new_malden_reading_room = Facility.create!(address: "Windsor Ave, New Malden KT3
   image: "https://www.sutton.gov.uk/documents/20124/1172448/3+-+bookshelves.png/e2fb02f9-c145-4c77-1f2d-048ea5c301af?t=1687506529999",
 )
 
-pages_of_cheshire = Facility.create!(address: "Victoria Rd, Macclesfield SK10 3BL",
-  business_owner: false,
-  rating: 4,
-  toilet: true,
-  sanitary_products: true,
-  baby_change: true,
-  quiet_place: true,
-  education: false,
-  name: "Pages of Cheshire",
-  opening_hours: "Open 09:00 - 17:00",
-  user: ivy,
-  image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D",
-)
-
 the_learning_loft = Facility.create!(address: "Galsworthy Rd, Kingston upon Thames KT2 7QB",
   business_owner: false,
   rating: 4,
